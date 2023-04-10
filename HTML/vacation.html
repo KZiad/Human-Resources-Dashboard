@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vacation Application Form</title>
+    <link rel="stylesheet" href="../CSS/Navigation.css">  </head>
+  <body>
+    <nav>
+      <label class="logo">FCAI HR</label>
+      <ul>
+          <li><a href="index.html"><b>Home</b></a></li>
+          <li><a href="aboutUs.html"><b>About Us</b></a></li>
+          <li><a href="login.html"><b>Login</b></a></li>
+      </ul>
+  </nav>
+    <center><h1>Apply for Vacation</h1></center>
+    <center>
+      <div>
+        <form>
+          <b>
+            <label>ID</label>
+            <br />
+            <input type="number" name="id"  />
+            <br />
+            <br />
+            <label>Full Name</label>
+            <br />
+            <input type="text" name="name" />
+            <br />
+            <br />
+            <label>Starting Date</label>
+            <br />
+
+            <input type="date" name="beginDate" />
+            <br />
+            <br />
+            <label>Ending Date</label>
+            <br />
+            <input type="date" name="endDate" />
+            <br />
+            <br />
+            <label>Reason</label>
+            <br />
+            <textarea
+              rows="5"
+              cols="30"
+              name="reason"
+            ></textarea>
+            <br />
+            <br />
+            <input
+              type="submit"
+              style="border-radius: 10px; background-color: lightgreen"
+              value="Submit Request"
+            />
+            <input
+              type="button"
+              style="border-radius: 10px;"
+              onclick="window.location.href = 'index.html';"
+              value="Cancel"
+            />
+          </b>
+        </form>
+      </div>
+    </center>
+  </body>
+</html>
