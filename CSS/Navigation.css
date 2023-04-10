@@ -1,17 +1,26 @@
 nav {
-    background: #146C94;
+    background: #303242;
     height: 80px;
     width: 100%;
     line-height: 80px;
+    border-radius: 12px;
 }
 
-nav label{
+nav a{
     color: white;
     font-size: 35px;
     margin-left: 15px;
     padding: 0px 20px;
     font-family: sans-serif;
     font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover{
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 20px;
 }
 
 nav ul {
@@ -33,12 +42,16 @@ nav ul li {
 nav ul li a{
     text-decoration: none;
     color: white;
-    padding: 7px 10px;
-    border-radius: 3px;
+    padding: 9px 18px;
+    border-radius: 20px;
     font-size: 18px;
 }
 
 nav ul li a.active , a:hover{
-    background: #19A7CE;
+    background: #50536b;
     transition: .8s;
+}
+
+body{
+    background-image: url('../Images/background.jpg');
 }

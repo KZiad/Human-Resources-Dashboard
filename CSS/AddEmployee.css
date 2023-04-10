@@ -1,0 +1,47 @@
+.head{
+    background: #303242;
+    width: 350px;
+    height: 65px;
+    border-radius: 20px;
+    margin-left: 41%;
+}
+
+div h1 {
+    text-align: center;
+    color: white;
+    font-family: arial;
+    padding: 13px;
+}
+
+form {
+    text-align: center;
+    color: white;
+    background: #303242;
+    padding: 20px 0;
+    text-align: center;
+    height: 500px;
+    width: 700px;
+    border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form label.invisible{
+    display: none;
+}
+
+form input.bar {
+    width: 300px;
+    margin: 17px;
+    padding: 12px 10px;
+    border-radius: 7px;
+    float: left;
+}
+
+form input.buttons{
+    border-radius: 5px;
+    font-size: 17px;
+    
+}
