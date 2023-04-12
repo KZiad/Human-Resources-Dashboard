@@ -1,67 +1,83 @@
 <!DOCTYPE html>
+
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/Vacation.css" />
+    <link rel="stylesheet" href="../CSS/Navigation.css" />
     <title>Vacation Application Form</title>
-    <link rel="stylesheet" href="../CSS/Navigation.css">
   </head>
   <body>
     <nav>
       <a href="index.html" class="logo">FCAI HR</a>
       <ul>
-          <li><a href="index.html"><b>Home</b></a></li>
-          <li><a href="aboutUs.html"><b>About Us</b></a></li>
-          <li><a href="login.html"><b>Login</b></a></li>
+        <li>
+          <a href="index.html"><b>Home</b></a>
+        </li>
+        <li>
+          <a href="aboutUs.html"><b>About Us</b></a>
+        </li>
+        <li>
+          <a href="login.html"><b>Login</b></a>
+        </li>
       </ul>
-  </nav>
-    <center><h1>Apply for Vacation</h1></center>
-    <center>
-      <div>
-        <form>
-          <b>
-            <label>ID</label>
-            <br />
-            <input type="number" name="id"  />
-            <br />
-            <br />
-            <label>Full Name</label>
-            <br />
-            <input type="text" name="name" />
-            <br />
-            <br />
-            <label>Starting Date</label>
-            <br />
+    </nav>
 
-            <input type="date" name="beginDate" />
-            <br />
-            <br />
+    <script>
+      localStorage.setItem("id", 20210507);
+      localStorage.setItem("name", "John Doe");
+      function submitVacForm() {
+        localStorage.setItem("test", "Hello") 
+        alert("Your request has been submitted");
+      }
+    </script>
+    <div>
+      <h1>Apply for Vacation</h1>
+      <form class="vform">
+        <div class="input-part vform-top">
+          <label class="left" for="empID">ID</label>
+          <input class="field left" type="number" id="empID" name="empID" />
+
+          <label class="right" for="empName">Full Name</label>
+          <input class="field right" type="text" name="name" id="empName" />
+        </div>
+        <script>
+          document.getElementById("empID").value = localStorage.getItem("id");
+          document.getElementById("empName").value =
+            localStorage.getItem("name");
+        </script>
+
+        <div class="vform-mid">
+          <div class="date">
+            <label>Starting Date</label>
+            <input class="field" type="date" name="beginDate" />
+
             <label>Ending Date</label>
-            <br />
-            <input type="date" name="endDate" />
-            <br />
-            <br />
+            <input class="field" type="date" name="endDate" />
+
+          </div>
+
+          <div class="date">
             <label>Reason</label>
-            <br />
-            <textarea
-              rows="5"
-              cols="30"
-              name="reason"
-            ></textarea>
-            <br />
-            <br />
-            <input
-              type="submit"
-              style="border-radius: 10px; background-color: lightgreen"
-              value="Submit Request"
-            />
-            <input
-              type="button"
-              style="border-radius: 10px;"
-              onclick="window.location.href = 'index.html';"
-              value="Cancel"
-            />
-          </b>
-        </form>
-      </div>
-    </center>
+            <textarea class="field" rows="5" cols="30" name="reason"></textarea>
+          </div>
+        </div>
+
+        <div class="input-part">
+          <input
+            type="button"
+            class="abutton"
+            value="Submit Request"
+            onclick="submitVacForm()"
+          />
+          <input
+            type="button"
+            class="abutton"
+            value="Cancel"
+            onclick="window.location.href = 'index.html'"
+          />
+        </div>
+      </form>
+    </div>
   </body>
 </html>
