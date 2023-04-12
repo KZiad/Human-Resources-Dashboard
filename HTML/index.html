@@ -3,6 +3,7 @@
   <head>
     <title>Human Resources Application</title>
     <link rel="stylesheet" href="../CSS/Navigation.css">
+    <link rel="stylesheet" href="../CSS/Transition.css">
   </head>
   <body>
       <nav>
@@ -13,46 +14,40 @@
             <li><a href="login.html"><b>Login</b></a></li>
         </ul>
     </nav>
+    <div class="transition">
       <center>
-      <h1>Human Resources Application</h1>
-      <form>
-        <label for="search">Search:</label>
-        <input type="text" id="search" name="search">
-        <button type="submit">Search</button>
-    </form>
-    <br><br>
-    <button id="add-employee-btn" type="button" onclick="window.location.href='addEmployees.html';">Add Employee</button>
-    <br><br>
+        <h1>Human Resources Application</h1>
+        <form>
+          <label for="search">Search:</label>
+          <input type="text" id="search" name="search">
+          <button type="submit">Search</button>
+        </form>
+        <br><br>
+        <button id="add-employee-btn" type="button" onclick="window.location.href='addEmployees.html';">Add Employee</button>
+        <br><br>
     
-    <table border style="border: 2px solid black; border-radius: 5px; text-align: center; width: 600px;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Department</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-  <!--  <tbody>
-          <tr>
-            <td>Ahmed Ahmed</td>
-            <td>Marketing</td>
-            <td>
-              <button class="remove-employee-btn">Remove</button>
-              <button class="update-employee-btn">Update</button>
-              <button class="vacation-employee-btn" type="button" onclick="window.location.href='vacation.html';">Vacation</button>
-            </td>
-          </tr> -->
-          <tr>
-            <td>
-              <button type="button" onclick="window.location.href = 'employeeData.html'">Ziad Naser Seif</button></td>
-            <td>Human Resources</td>
-            <td>
-              <button class="remove-employee-btn">Remove</button>
-              <button class="update-employee-btn" type="button" onclick="window.location.href='update.html';">Update</button>
-              <button class="vacation-employee-btn" type="button" onclick="window.location.href='vacation.html';">Vacation</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <table border style="border: 2px solid black; border-radius: 5px; text-align: center; width: 600px;">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <button type="button" onclick="window.location.href = 'employeeData.html'">Ziad Naser Seif</button></td>
+              <td>Human Resources</td>
+              <td>
+                <button class="remove-employee-btn">Remove</button>
+                <button class="update-employee-btn" type="button" onclick="window.location.href='update.html';">Update</button>
+                <button class="vacation-employee-btn" type="button" onclick="window.location.href='vacation.html';">Vacation</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </div>
   </body>
 </html>
