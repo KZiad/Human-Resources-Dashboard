@@ -4,6 +4,7 @@
         <title>Add Employees</title>
         <link rel="stylesheet" href="../CSS/Navigation.css">
         <link rel="stylesheet" href="../CSS/AddEmployee.css">
+        <link rel="stylesheet" href="../CSS/Transition.css">
     </head>
     <body>
         <nav>
@@ -14,56 +15,58 @@
                 <li><a href="login.html"><b>Login</b></a></li>
             </ul>
         </nav>
-            
-        <div class="head">
-            <h1>Add Employee</h1>
-        </div>
         
-        <form>
-            <label for="name" class="invisible">Full Name</label> 
-            <input type="text" id="name" name="Name" placeholder="Name" class="bar">
-            <br><br>
+        <div class="transition">
+            <div class="head">
+                <h1>Add Employee</h1>
+            </div>
             
-            <label for="id" class="invisible">ID</label>
-            <input type="number" id="id" name="ID" placeholder="ID" class="bar">
-            <br><br>
-            
-            
-            <label for="email" class="invisible">E-Mail </label>
-            <input type="email" id="email" name="E-Mail" placeholder="E-Mail" class="bar">
-            <br><br>
-            
-            <label for="address" class="invisible">Address</label>
-            <input type="text" id="address" name="Address" placeholder="Address" class="bar">
-            <br><br>
-            
-            <label for="number" class="invisible">Phone Number</label>
-            <input type="tel" id="number" name="Number" placeholder="Mobile Number" class="bar">
-            <br><br>
-            
-            <label for="gender">Gender</label><br>
-            <input type="radio" id="gender" name="Gender">Male
-            <input type="radio" id="gender" name="Gender">Female
-            <br><br>
-            
-            <label for="date">Date of Birth </label>
-            <input type="date" id="dob" name="Date Of Birth">
-            <br><br>
-            
-            <label for="status">Martial Status</label>
-            <select id="status" name="Martial Status">
-                <option value="single">Single</option>
-                <option value="married">Married</option>
-                <option value="widowed">Widowed</option>
-            </select>
-            <br><br>
-            
-            <label for="salary">Starting Salary</label>
-            <input type="number" id="salary" name="Salary">
-            <br><br>
-            
-            <input type="submit" value="Add" class = "buttons">
-            <input type="button" value="Cancel" onclick="window.location.href = 'index.html';" >
-        </form>
+            <form>
+                <label for="name" class="invisible">Full Name</label> 
+                <input type="text" id="name" name="Name" placeholder="Name" class="bar">
+                <br><br>
+                
+                <label for="id" class="invisible">ID</label>
+                <input type="number" id="id" name="ID" placeholder="ID" class="bar">
+                <br><br>
+                
+                
+                <label for="email" class="invisible">E-Mail </label>
+                <input type="email" id="email" name="E-Mail" placeholder="E-Mail" class="bar">
+                <br><br>
+                
+                <label for="address" class="invisible">Address</label>
+                <input type="text" id="address" name="Address" placeholder="Address" class="bar">
+                <br><br>
+                
+                <label for="number" class="invisible">Phone Number</label>
+                <input type="tel" id="number" name="Number" placeholder="Mobile Number" class="bar">
+                <br><br>
+                
+                <label for="gender">Gender</label><br>
+                <input type="radio" id="gender" name="Gender">Male
+                <input type="radio" id="gender" name="Gender">Female
+                <br><br>
+                
+                <label for="date">Date of Birth </label>
+                <input type="date" id="dob" name="Date Of Birth">
+                <br><br>
+                
+                <label for="status">Martial Status</label>
+                <select id="status" name="Martial Status">
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="widowed">Widowed</option>
+                </select>
+                <br><br>
+                
+                <label for="salary">Starting Salary</label>
+                <input type="number" id="salary" name="Salary">
+                <br><br>
+                
+                <input type="submit" value="Add" class = "buttons">
+                <input type="button" value="Cancel" onclick="window.location.href = 'index.html';" >
+            </form>
+        </div>
     </body>
 </html>

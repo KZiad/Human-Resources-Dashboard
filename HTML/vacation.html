@@ -43,54 +43,56 @@
 
         alert("Your request has been submitted");
       }
-    </script>
-    <div>
-      <h1>Apply for Vacation</h1>
-      <form class="vform">
-        <div class="input-part vform-top">
-          <label class="left" for="empID">ID</label>
-          <input class="field left" type="number" id="empID" name="empID" />
-
-          <label class="right" for="empName">Full Name</label>
-          <input class="field right" type="text" name="name" id="empName" />
-        </div>
-        <script>
-          document.getElementById("empID").value = localStorage.getItem("vacid");
-          document.getElementById("empName").value =
-            localStorage.getItem("vacname");
-        </script>
-
-        <div class="vform-mid">
-          <div class="date">
-            <label>Starting Date</label>
-            <input class="field" type="date" name="beginDate" />
-
-            <label>Ending Date</label>
-            <input class="field" type="date" name="endDate" />
-
+      </script>
+    <div class="transition">
+      <div>
+        <h1>Apply for Vacation</h1>
+        <form class="vform">
+          <div class="input-part vform-top">
+            <label class="left" for="empID">ID</label>
+            <input class="field left" type="number" id="empID" name="empID" />
+  
+            <label class="right" for="empName">Full Name</label>
+            <input class="field right" type="text" name="name" id="empName" />
           </div>
-
-          <div class="date">
-            <label>Reason</label>
-            <textarea class="field" rows="5" cols="30" name="reason"></textarea>
+          <script>
+            document.getElementById("empID").value = localStorage.getItem("vacid");
+            document.getElementById("empName").value =
+              localStorage.getItem("vacname");
+          </script>
+  
+          <div class="vform-mid">
+            <div class="date">
+              <label>Starting Date</label>
+              <input class="field" type="date" name="beginDate" />
+  
+              <label>Ending Date</label>
+              <input class="field" type="date" name="endDate" />
+  
+            </div>
+  
+            <div class="date">
+              <label>Reason</label>
+              <textarea class="field" rows="5" cols="30" name="reason"></textarea>
+            </div>
           </div>
-        </div>
-
-        <div class="input-part">
-          <input
-            type="button"
-            class="abutton"
-            value="Submit Request"
-            onclick="submitVacForm()"
-          />
-          <input
-            type="button"
-            class="abutton"
-            value="Cancel"
-            onclick="window.location.href = 'index.html'"
-          />
-        </div>
-      </form>
+  
+          <div class="input-part">
+            <input
+              type="button"
+              class="abutton"
+              value="Submit Request"
+              onclick="submitVacForm()"
+            />
+            <input
+              type="button"
+              class="abutton"
+              value="Cancel"
+              onclick="window.location.href = 'index.html'"
+            />
+          </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>

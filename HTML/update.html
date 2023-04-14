@@ -3,6 +3,7 @@
     <head>
         <title> Update Data Of Employees </title>
         <link rel="stylesheet" href="../CSS/Navigation.css">
+        <link rel="stylesheet" href="../CSS/Transition.css">
     </head>
     <body>
         
@@ -15,69 +16,70 @@
             </ul>
         </nav>
         
-        <center>
-            <h1>Update Employee Data</h1>
-   
-    <form>
-        <label for="id">ID</label>
-                <input type="number" id="id" name="ID" value="2345610987">
-                <br><br>
-                
-                <label for="name">Full Name</label> 
-                <input type="text" id="name" name="Name" value="Ziad Naser Seif">
-                <br><br>
-                
-                <label for="gender">Gender</label><br>
-                <input type="radio" id="gender" name="Gender" checked >Male
-                <input type="radio" id="gender" name="Gender">Female
-                <br><br>
-                
-                <label for="email">E-Mail </label>
-                <input type="email" id="email" name="E-Mail" value="ziad1234565@gmail.com">
-                <br><br>
-                
-                <label for="address">Address</label>
-                <input type="text" id="address" name="Address" value="Giza">
-                <br><br>
-                
-                <label for="number">Phone Number </label>
-                <input type="tel" id="number" name="Number" value="01523751469">
-                <br><br>
-        
-                <label for="date">Date of Birth </label>
-                <input type="date" id="dob" name="Date Of Birth" value="1997-05-26" >
-                <br><br>
-                
-                <label for="status">Martial Status</label>
-                <select id="status" name="Martial Status"  >
-                    <option value="single">Single</option>
-                    <option value="married" selected >Married</option>
-                    <option value="widowed">Widowed</option>
+        <div class="transition">
+            <center>
+                <h1>Update Employee Data</h1>
+
+                <form>
+                    <label for="id">ID</label>
+                            <input type="number" id="id" name="ID" value="2345610987">
+                            <br><br>
+                            
+                            <label for="name">Full Name</label> 
+                            <input type="text" id="name" name="Name" value="Ziad Naser Seif">
+                            <br><br>
+                            
+                            <label for="gender">Gender</label><br>
+                            <input type="radio" id="gender" name="Gender" checked >Male
+                            <input type="radio" id="gender" name="Gender">Female
+                            <br><br>
+                            
+                            <label for="email">E-Mail </label>
+                            <input type="email" id="email" name="E-Mail" value="ziad1234565@gmail.com">
+                            <br><br>
+                            
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="Address" value="Giza">
+                            <br><br>
+                            
+                            <label for="number">Phone Number </label>
+                            <input type="tel" id="number" name="Number" value="01523751469">
+                            <br><br>
                     
-                </select>
-                <br><br>
-
-                <label for="number of available vacation days"> Number of available 
-                    vacation days </label>
-                <input type="number" value="28">
-
-                <br><br>
-
-                <label for="number of actual approved vacation days"> Number of actual approved 
-                    vacation days </label>
-                <input type="number" value="32">
-                <br><br>
-
-                
-                <label for="salary">Salary</label>
-                <input type="number" id="salary" name="Salary" value="15000">
-                <br><br>
-                
-                <input type="button" value="Update" onclick="window.location.href = 'index.html';">
-                <input type="button" value="Cancel" onclick="window.location.href = 'index.html';">
-                <input type="button" value="Delete" onclick="window.location.href = 'index.html';">
-
-            </form>
-        </center>
+                            <label for="date">Date of Birth </label>
+                            <input type="date" id="dob" name="Date Of Birth" value="1997-05-26" >
+                            <br><br>
+                            
+                            <label for="status">Martial Status</label>
+                            <select id="status" name="Martial Status"  >
+                                <option value="single">Single</option>
+                                <option value="married" selected >Married</option>
+                                <option value="widowed">Widowed</option>
+                                
+                            </select>
+                            <br><br>
+        
+                            <label for="number of available vacation days"> Number of available 
+                                vacation days </label>
+                            <input type="number" value="28">
+        
+                            <br><br>
+        
+                            <label for="number of actual approved vacation days"> Number of actual approved 
+                                vacation days </label>
+                            <input type="number" value="32">
+                            <br><br>
+        
+                            
+                            <label for="salary">Salary</label>
+                            <input type="number" id="salary" name="Salary" value="15000">
+                            <br><br>
+                            
+                            <input type="button" value="Update" onclick="window.location.href = 'index.html';">
+                            <input type="button" value="Cancel" onclick="window.location.href = 'index.html';">
+                            <input type="button" value="Delete" onclick="window.location.href = 'index.html';">
+                    </form>
+                </center>
+        </div>   
     </body>
 </html>
