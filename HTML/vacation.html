@@ -24,10 +24,23 @@
     </nav>
 
     <script>
-      localStorage.setItem("id", 20210507);
-      localStorage.setItem("name", "John Doe");
       function submitVacForm() {
-        localStorage.setItem("test", "Hello") 
+        if (localStorage.getItem("vacations") == null) {
+          localStorage.setItem("vacations", "[]");
+        }
+        var vacs = JSON.parse(localStorage.getItem("vacations"));
+        var vac = {
+          id: document.getElementById("empID").value,
+          name: document.getElementById("empName").value,
+          beginDate: document.getElementsByName("beginDate")[0].value,
+          endDate: document.getElementsByName("endDate")[0].value,
+          reason: document.getElementsByName("reason")[0].value,
+          status: "Pending"
+        };
+        vacs[vac.id] = vac;
+        localStorage.setItem("vacations", JSON.stringify(vacs));
+
+
         alert("Your request has been submitted");
       }
     </script>
@@ -42,9 +55,9 @@
           <input class="field right" type="text" name="name" id="empName" />
         </div>
         <script>
-          document.getElementById("empID").value = localStorage.getItem("id");
+          document.getElementById("empID").value = localStorage.getItem("vacid");
           document.getElementById("empName").value =
-            localStorage.getItem("name");
+            localStorage.getItem("vacname");
         </script>
 
         <div class="vform-mid">
