@@ -5,6 +5,26 @@
     <link rel="stylesheet" href="../CSS/VacationList.css" />
     <link rel="stylesheet" href="../CSS/Navigation.css" />
     <title>All Vacations</title>
+    <script>
+      function approveVacation(index) {
+        var vacations = JSON.parse(localStorage.getItem("vacations"));
+        vacations[index].status = "Approved";
+        localStorage.setItem("vacations", JSON.stringify(vacations));
+        location.reload();
+      }
+      function denyVacation(index) {
+        var vacations = JSON.parse(localStorage.getItem("vacations"));
+        vacations[index].status = "Denied";
+        localStorage.setItem("vacations", JSON.stringify(vacations));
+        location.reload();
+      }
+      function deleteVacation(index) {
+        var vacations = JSON.parse(localStorage.getItem("vacations"));
+        vacations.splice(index, 1);
+        localStorage.setItem("vacations", JSON.stringify(vacations));
+        location.reload();
+      }
+    </script>
   </head>
 
   <body>
@@ -19,69 +39,38 @@
         </li>
       </ul>
     </nav>
-    <div class="table">
-      <table>
-        <script>
-            function approveVacation(index) {
-                var vacations = JSON.parse(localStorage.getItem("vacations"));
-                vacations[index].status = "Approved";
-                localStorage.setItem("vacations", JSON.stringify(vacations));
-                location.reload();
-            }
-            function denyVacation(index) {
-                var vacations = JSON.parse(localStorage.getItem("vacations"));
-                vacations[index].status = "Denied";
-                localStorage.setItem("vacations", JSON.stringify(vacations));
-                location.reload();
-            }
-            function deleteVacation(index){
-                var vacations = JSON.parse(localStorage.getItem("vacations"));
-                vacations.splice(index, 1);
-                localStorage.setItem("vacations", JSON.stringify(vacations));
-                location.reload();
-            }
-          if (
-            localStorage.getItem("vacations") == null ||
-            localStorage.getItem("vacations") == "[]"
-          ) {
-            document.write("<tr><td colspan='6'>No vacations found</td></tr>");
-          } else {
-            document.write(`<thead>
-                <tr>
-                    <th>Employee ID</th>
-                    <th>Employee Name</th>
-                    <th>Begin Date</th>
-                    <th>End Date</th>
-                    <th>Reason</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>`);
-            var vacations = JSON.parse(localStorage.getItem("vacations"));
-            for (var i = 0; i < vacations.length; i++) {
-              var vac = vacations[i];
-              if (vac != null) {
-                document.write("<tr>");
-                document.write("<td>" + vac.id + "</td>");
-                document.write("<td>" + vac.name + "</td>");
-                document.write("<td>" + vac.beginDate + "</td>");
-                document.write("<td>" + vac.endDate + "</td>");
-                document.write("<td>" + vac.reason + "</td>");
-                document.write("<td>" + vac.status + "</td>");
-                document.write(
-                  `<td>
-                    <button class="appBut" onclick='approveVacation("${i}")'>Approve</button>
-                    <button class="denBut" onclick='denyVacation("${i}")'>Deny</button>
-                    <button class="editBut" onclick='deleteVacation("${i}")'>Delete</button>
-                    
-                    </td>`
-                );
-                document.write("</tr>");
-              }
-            }
+    <div class="vacs">
+      <script>
+        if (
+          localStorage.getItem("vacations") == null ||
+          localStorage.getItem("vacations") == "[]"
+        ) {
+          document.write("<h1>No vacations to show</h1>");
+        } else {
+          let vacs = JSON.parse(localStorage.getItem("vacations"));
+          for (var i = 0; i < vacs.length; i++) {
+            document.write(`<div class="vac">
+                              <div class="cardHead">
+                                <div class="empData">${vacs[i].id} <br/> ${vacs[i].name}</div>
+                                <div class="vacStatus">Status: ${vacs[i].status}</div>
+                              </div>
+                              <div class="cardBody">
+                                <div class="vacDates">
+                                  ${vacs[i].beginDate} -> ${vacs[i].endDate}
+                                </div>
+                                <div class="vacReason">
+                                  Reason: <br/> ${vacs[i].reason}
+                                </div>
+                                <div class="vacActions">
+                                  <button class="appBut" onclick="approveVacation(${i})">Approve</button>
+                                  <button class="denBut" onclick="denyVacation(${i})">Deny</button>
+                                  <button class="deleteBut" onclick="deleteVacation(${i})">Delete</button>
+                                </div>
+                               </div>
+                            </div>`);
           }
-        </script>
-      </table>
+        }
+      </script>
     </div>
   </body>
 </html>
