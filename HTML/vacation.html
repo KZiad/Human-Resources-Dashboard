@@ -20,63 +20,128 @@
         <li>
           <a href="login.html"><b>Login</b></a>
         </li>
+        <li>
+          <a href="vacationList.html"><b>Vacation List</b></a>
+        </li>
       </ul>
     </nav>
 
     <script>
-      function submitVacForm() {
-        if (localStorage.getItem("vacations") == null) {
-          localStorage.setItem("vacations", "[]");
+
+      function validate(vac) {
+        // Check if id is a number
+        if (vac.id == "" || vac.id == undefined) {
+          alert("Error: Please write a valid ID");
+          return false;
+        
         }
-        var vacs = JSON.parse(localStorage.getItem("vacations"));
+
+        // Checking if the name exists
+        if (vac.name == "" || vac.name == undefined) {
+          alert("Error: Please enter a name");
+          return false;
+        }
+
+
+        // Checking if the dates are valid
+        var today = new Date();
+        var beginDate = vac.beginDate;
+        var endDate = vac.endDate;
+        if (beginDate < today) {
+          alert("Error: Begin date must be in the future");
+          return false;
+        }
+        if (endDate < today) {
+          alert("Error: End date must be in the future");
+          return false;
+        }
+        if (endDate < beginDate) {
+          alert("Error: End date must be after begin date");
+          return false;
+        }
+
+        // Checking if the reason exists
+        if (vac.reason == "" || vac.reason == undefined) {
+          alert("Error: Please enter a reason");
+          return false;
+        }
+        return true;
+      }
+
+
+      function submitVacForm() {
         var vac = {
           id: document.getElementById("empID").value,
           name: document.getElementById("empName").value,
           beginDate: document.getElementsByName("beginDate")[0].value,
           endDate: document.getElementsByName("endDate")[0].value,
           reason: document.getElementsByName("reason")[0].value,
-          status: "Pending"
+          status: "Pending",
         };
-        vacs[vac.id] = vac;
+        if (!validate(vac)) {
+          return;
+        }
+
+        if (localStorage.getItem("vacations") == null) {
+          localStorage.setItem("vacations", "[]");
+        }
+        var vacs = JSON.parse(localStorage.getItem("vacations"));
+
+        vacs[vacs.length] = vac;
         localStorage.setItem("vacations", JSON.stringify(vacs));
 
-
         alert("Your request has been submitted");
+        window.location.href = "vacationList.html";
       }
-      </script>
+    </script>
     <div class="transition">
       <div>
         <h1>Apply for Vacation</h1>
         <form class="vform">
           <div class="input-part vform-top">
             <label class="left" for="empID">ID</label>
-            <input class="field left" type="number" id="empID" name="empID" />
-  
+            <input
+              class="field left"
+              type="number"
+              id="empID"
+              name="empID"
+              required="true"
+            />
+
             <label class="right" for="empName">Full Name</label>
             <input class="field right" type="text" name="name" id="empName" />
           </div>
           <script>
-            document.getElementById("empID").value = localStorage.getItem("vacid");
-            document.getElementById("empName").value =
-              localStorage.getItem("vacname");
+            let vacid = localStorage.getItem("vacid");
+            let vacname = localStorage.getItem("vacname");
+            if (vacid != null && vacname != null) {
+              document.getElementById("empID").value = vacid;
+              document.getElementById("empName").value = vacname;
+              document.getElementById("empID").disabled = true;
+              document.getElementById("empName").disabled = true;
+            }
           </script>
-  
+
           <div class="vform-mid">
             <div class="date">
               <label>Starting Date</label>
               <input class="field" type="date" name="beginDate" />
-  
+
               <label>Ending Date</label>
               <input class="field" type="date" name="endDate" />
-  
             </div>
-  
+
             <div class="date">
               <label>Reason</label>
-              <textarea class="field" rows="5" cols="30" name="reason"></textarea>
+              <textarea
+                class="field"
+                rows="5"
+                cols="30"
+                name="reason"
+              ></textarea>
             </div>
           </div>
-  
+
           <div class="input-part">
             <input
               type="button"
