@@ -49,7 +49,7 @@
           document.write("<h1>No vacations to show</h1>");
         } else {
           let vacs = JSON.parse(localStorage.getItem("vacations"));
-          for (var i = 0; i < vacs.length; i++) {
+          for (var i = (vacs.length - 1); i >= 0; i--) {
             document.write(`<div class="vac">
                               <div class="cardHead">
                                 <div class="empData">${vacs[i].id} <br/> ${vacs[i].name}</div>
