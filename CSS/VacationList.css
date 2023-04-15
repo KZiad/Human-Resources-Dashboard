@@ -16,7 +16,7 @@ h1 {
     color: #ffffff;
     background-color: #30324284;
     width: fit-content;
-    max-width: 100%;
+    max-width: 80%;
     margin: auto;
     font-size: 1em;
     border-radius: 10px;
@@ -96,24 +96,15 @@ button {
     cursor: pointer;
 }
 
-.appBut{
-    background-color: rgb(79, 222, 114);
-    color: black;
-}
+
 .appBut:hover{
     background-color: rgba(79, 222, 114, 0.7);
 }
-.denBut{
-    background-color: rgb(241, 81, 81);
-    color: black;
-}
+
 .denBut:hover{
     background-color: rgb(221, 50, 50);
 }
-.deleteBut{
-    background-color: rgb(165, 165, 150);
-    color: black;
-}
+
 .deleteBut:hover{
     background-color: rgb(145, 145, 130);
 }
