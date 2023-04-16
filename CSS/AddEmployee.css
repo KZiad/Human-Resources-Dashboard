@@ -26,7 +26,7 @@ div h1 {
 form {
     text-align: center;
     color: white;
-    background: rgba(48, 50, 66, 0.8);
+    background: #303242;
     padding: 20px 0;
     text-align: center;
     height: 500px;
@@ -134,11 +134,11 @@ form select{
 }
 
 form #salary {
-    width: 300px;
+    width: 200px;
     margin: 17px;
     padding: 12px 10px;
     border-radius: 7px;
     position: absolute;
-    left: 49%;
+    left: 56%;
     bottom: 39.4%;
 }
