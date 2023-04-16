@@ -15,6 +15,7 @@
             </ul>
         </nav>
         
+        
         <div class="transition">
             <div class="head">
                 <h1>Add Employee</h1>
@@ -43,8 +44,10 @@
                 <br><br>
                 
                 <label for="gender">Gender</label><br>
-                <input type="radio" id="gender" name="Gender">Male
-                <input type="radio" id="gender" name="Gender">Female
+                <div class="genderType">
+                    <input type="radio" name="gender">Male
+                    <input type="radio" name="gender">Female
+                </div>
                 <br><br>
                 
                 <label for="date">Date of Birth </label>
@@ -59,12 +62,14 @@
                 </select>
                 <br><br>
                 
-                <label for="salary">Starting Salary</label>
-                <input type="number" id="salary" name="Salary">
+                <div class="vl"></div>
+                
+                <label for="salary" class="invisible">Salary</label>
+                <input type="number" id="salary" name="Salary" placeholder="Salary">
                 <br><br>
                 
                 <input type="submit" value="Add" class = "buttons">
-                <input type="button" value="Cancel" onclick="window.location.href = 'index.html';" >
+                <input type="button" value="Cancel" class = "buttons" onclick="window.location.href = 'index.html';" >
             </form>
         </div>
     </body>

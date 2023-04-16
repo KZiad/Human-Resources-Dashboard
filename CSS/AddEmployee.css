@@ -1,9 +1,19 @@
 .head{
-    background: #303242;
-    width: 350px;
+    background: rgba(246, 107, 14, 0.9);
+    width: 300px;
     height: 65px;
     border-radius: 20px;
-    margin-left: 41%;
+    margin-left: 42.2%;
+}
+
+.vl{
+    position: absolute;
+    left: 49.8%;
+    bottom: 25%;
+    background-color: #565a77;
+    width: 4px;
+    height: 380px;
+    border-radius: 200px;
 }
 
 div h1 {
@@ -16,7 +26,7 @@ div h1 {
 form {
     text-align: center;
     color: white;
-    background: #303242;
+    background: rgba(48, 50, 66, 0.7);
     padding: 20px 0;
     text-align: center;
     height: 500px;
@@ -41,7 +51,94 @@ form input.bar {
 }
 
 form input.buttons{
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #f66b0e;
+    border-color: #f66b0e;
+    color: white;
+    padding: 7px;
+    padding-inline: 16px;
+}
+
+form input[type= submit]{
+    position: absolute;
+    left: 270px;
+    bottom: 20px;
+}
+
+form input[type= button]{
+    position: absolute;
+    left: 350px;
+    bottom: 20px;
+}
+
+form label[for = gender]{
+    float: left;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f66b0e;
+    padding: 7px;
+    border-radius: 10px;
+    position: absolute;
+    left: 52%;
+    bottom: 85.7%;
+}
+
+.genderType{
+    position: relative;
+    left: 2%;
+    bottom: 34%;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+form label[for = date]{
+    float: left;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f66b0e;
+    padding: 7px;
+    border-radius: 10px;
+    position: absolute;
+    left: 52%;
+    bottom: 71.4%;
+}
+
+form input[type= date]{
+    position: absolute;
+    left: 74%;
+    bottom: 72%;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 3px;
+}
+
+form label[for = status]{
+    float: left;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f66b0e;
+    padding: 7px;
+    border-radius: 10px;
+    position: absolute;
+    left: 52%;
+    bottom: 57%;
+}
+
+form select{
+    position: absolute;
+    left: 77%;
+    bottom: 58%;
+    padding: 6px;
     border-radius: 5px;
-    font-size: 17px;
-    
+}
+
+form #salary {
+    width: 300px;
+    margin: 17px;
+    padding: 12px 10px;
+    border-radius: 7px;
+    position: absolute;
+    left: 49%;
+    bottom: 39.4%;
 }
