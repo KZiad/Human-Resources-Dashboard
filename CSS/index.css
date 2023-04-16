@@ -34,7 +34,7 @@ form {
     margin: auto;
     padding: 10px;
     padding-top: 5px;
-    text-align: center;
+    text-align: left;
     border-radius: 10px;
     font-size: 1em;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -111,7 +111,6 @@ table td {
     text-align: center;
     border: 1px solid #f66b0e;
     background-color: #ffffff;
-    color: black;
     padding: 10px;
 }
 table button {
