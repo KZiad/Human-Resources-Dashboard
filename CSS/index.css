@@ -10,7 +10,7 @@ h1 {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
     background-color: #f66b0e;
-    padding: 14px;
+    padding: 12px;
     border-radius: 10px;
 }
 
@@ -30,6 +30,8 @@ form {
 
 /* Search CSS */
 .search input {
+    position: relative;
+    left: 50px;
     width: 50%;
     margin: auto;
     padding: 10px;
@@ -40,6 +42,8 @@ form {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .search button {
+    position: relative;
+    left: 50px;
     width: fit-content;
     margin: auto;
     padding: 10px;
