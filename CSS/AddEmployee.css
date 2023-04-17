@@ -1,29 +1,22 @@
 .head{
     background: rgba(246, 107, 14, 0.9);
-    width: 300px;
-    height: 65px;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
     border-radius: 20px;
-    margin-left: 42.2%;
-}
-
-.vl{
-    position: absolute;
-    left: 49.8%;
-    bottom: 25%;
-    background-color: #565a77;
-    width: 4px;
-    height: 380px;
-    border-radius: 200px;
+    width: 270px;
 }
 
 div h1 {
     text-align: center;
     color: white;
     font-family: arial;
-    padding: 13px;
 }
 
 form {
+    margin: auto;
     text-align: center;
     color: white;
     background: #303242;
@@ -32,10 +25,23 @@ form {
     height: 500px;
     width: 700px;
     border-radius: 12px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+form div.part1{
+    flex-direction: column;
+}
+
+form div.part2{
+    flex-direction: column;
+}
+
+.vl{
+    background-color: #565a77;
+    width: 4px;
+    height: 380px;
+    border-radius: 200px;
+
 }
 
 form label.invisible{
@@ -47,7 +53,6 @@ form input.bar {
     margin: 17px;
     padding: 12px 10px;
     border-radius: 7px;
-    float: left;
 }
 
 form input.buttons{
@@ -60,16 +65,8 @@ form input.buttons{
     padding-inline: 16px;
 }
 
-form input[type= submit]{
-    position: absolute;
-    left: 270px;
-    bottom: 20px;
-}
-
-form input[type= button]{
-    position: absolute;
-    left: 350px;
-    bottom: 20px;
+form div.buttons{
+    flex-direction: row;
 }
 
 form label[for = gender]{
@@ -79,9 +76,6 @@ form label[for = gender]{
     background-color: #f66b0e;
     padding: 7px;
     border-radius: 10px;
-    position: absolute;
-    left: 52%;
-    bottom: 85.7%;
 }
 
 .genderType{
@@ -99,15 +93,9 @@ form label[for = date]{
     background-color: #f66b0e;
     padding: 7px;
     border-radius: 10px;
-    position: absolute;
-    left: 52%;
-    bottom: 71.4%;
 }
 
 form input[type= date]{
-    position: absolute;
-    left: 74%;
-    bottom: 72%;
     border-radius: 7px;
     font-size: 16px;
     padding: 3px;
@@ -120,15 +108,9 @@ form label[for = status]{
     background-color: #f66b0e;
     padding: 7px;
     border-radius: 10px;
-    position: absolute;
-    left: 52%;
-    bottom: 57%;
 }
 
 form select{
-    position: absolute;
-    left: 77%;
-    bottom: 58%;
     padding: 6px;
     border-radius: 5px;
 }
@@ -138,7 +120,4 @@ form #salary {
     margin: 17px;
     padding: 12px 10px;
     border-radius: 7px;
-    position: absolute;
-    left: 56%;
-    bottom: 39.4%;
 }
