@@ -8,10 +8,12 @@
         <link rel="stylesheet" href="../CSS/Navigation.css">
         <link rel="stylesheet" href="../CSS/Transition.css">
         <link rel="icon" href="../Images/favicon.ico" type="image/x-icon">
+        <script src="../JS/empData.js"></script>
     </head>
 
     <body>
         <nav>
+            <img src="../Images/logo.png"/>
             <a href="homepage.html" class="logo">FCAI HR</a>
             <ul>
                 <li><a href="index.html"><b>Home</b></a></li>
@@ -21,70 +23,91 @@
         </nav>
 
         <div class="transition">
-            <center>
+
+            <div class="head">
                 <h1> Employee Data </h1> 
-                <hr> <br> <br> 
+            </div>
 
-                <table border="1" class="center">
-                    <thead> 
-                        <tr>
-                            <td> <h3> <pre> Name </pre> </h3> </td>
-                            <td> <pre>   Ziad Naser Seif    </pre> </td>
-                        </tr>
-                    </thead>
+            <table> 
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="info">Name</div>
+                        </td>
+                        <td><script>WriteName();</script></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="info">ID</div>
+                        </td>
+                        <td><script>WriteID();</script></td>
+                    </tr>
 
-                    <tbody>
-                        <tr>
-                            <td> <h3> <pre> Id </pre> </h3> </td>
-                            <td>  <pre> 2345610987 </pre> </td>
-                        </tr>
-    
-                        <tr>
-                            <td> <h3> <pre> Email </pre> </h3> </td>
-                            <td> <pre> ziad1234565@gmail.com </pre> </td>
-                        </tr>
-    
-                        <tr>
-                            <td> <h3> <pre> Address </pre> </h3> </td>
-                            <td> <pre> Giza </pre>  </td>
-                        </tr>
-    
-                        <tr>
-                            <td> <h3> <pre> Phone number </pre> </h3> </td>
-                            <td> <pre> 01523761469 </pre> </td>
-                        </tr>
-    
-                        <tr>
-                            <td> <h3> <pre> Gender </pre> </h3> </td>
-                            <td> <pre> Male </pre> </td>
-                        </tr>
-    
-                        <tr>
-                            <td> <h3> <pre> Marital status </pre> </h3> </td>
-                            <td> <pre> Married </pre> </td>
-                        </tr>
-    
-                        <tr>
-                            <td> <h3> <pre> Number of available vacation days </pre> </h3> </td>
-                            <td> <pre> 28 </pre> </td>
-                        </tr>
-    
-                        <tr>
-                            <td> <h3> <pre> Number of actual approved vacation days </pre> </h3> </td>
-                            <td> <pre> 32 </pre> </td>
-                        </tr>
-    
-                        <tr>
-                            <td> <h3> <pre> Salary </pre> </h3> </td>
-                            <td> <pre> 15000 </pre> </td>
-                        </tr>
-    
-                        <tr>
-                            <td> <h3> <pre> Date Of Birth </pre> </h3> </td>
-                            <td> <pre> 19 / 3 / 2002 </pre> </td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <tr>
+                        <td>
+                            <div class="info">E-Mail</div>
+                        </td>
+                        <td><script>WriteEmail();</script></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="info">Address</div>
+                        </td>
+                        <td><script>WriteAddress();</script></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="info">Number</div>
+                        </td>
+                        <td><script>WriteNumber();</script></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="info">Gender</div>
+                        </td>
+                        <td><script>WriteGender();</script></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="info double">Marital Status</div>
+                        </td>
+                        <td><script>WriteStatus();</script></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="info extra">Available Vacation Days</div>
+                        </td>
+                        <td><script>WriteAvailable();</script></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="info extra">Approved Vacation Days</div>
+                        </td>
+                        <td><script>WriteApproved();</script></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="info">Salary</div>
+                        </td>
+                        <td><script>WriteSalary();</script></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="info double">Date Of Birth</div>
+                        </td>
+                        <td><script>WriteDate();</script></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </body>
 </html> 
