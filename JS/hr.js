@@ -19,4 +19,4 @@ function insertEmployees() {
     })
 }
 
-// insertEmployees();
+insertEmployees();
