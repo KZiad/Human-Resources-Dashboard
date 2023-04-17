@@ -91,6 +91,7 @@ form label[for = gender]{
     font-size: 18px;
     font-family: sans-serif;
     margin: auto;
+    margin-inline: 20px;
 }
 
 form label[for = date]{
