@@ -34,7 +34,6 @@ h1 {
     background-color: #303242;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
     max-width: 300px;
     height: fit-content;
     border-radius: 10px;    
@@ -49,6 +48,12 @@ h1 {
     background-color: #f66b0e;
     margin: auto;
     padding-left: 10px;
+}
+.approved{
+    background-color: rgba(79, 222, 114, 0.7);
+}
+.denied{
+    background-color: rgb(221, 50, 50);
 }
 .empData{
     text-align: start;

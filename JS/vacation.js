@@ -4,6 +4,12 @@ function validate(vac) {
     alert("Error: Please write a valid ID");
     return false;
   }
+  //TODO: Checking if the id exists
+  // let employees = JSON.parse(localStorage.getItem("employees"));
+  // if (employees[vac.id] == null) {
+  //   alert("Error: ID does not exist");
+  //   return false;
+  // }
 
   // Checking if the name exists
   if (vac.name == "" || vac.name == undefined) {
@@ -40,8 +46,8 @@ function submitVacForm() {
   var vac = {
     id: document.getElementById("empID").value,
     name: document.getElementById("empName").value,
-    beginDate: document.getElementsByName("beginDate")[0].value,
-    endDate: document.getElementsByName("endDate")[0].value,
+    beginDate: document.getElementsByName("beginDate")[0].valueAsDate,
+    endDate: document.getElementsByName("endDate")[0].valueAsDate,
     reason: document.getElementsByName("reason")[0].value,
     status: "Pending",
   };
