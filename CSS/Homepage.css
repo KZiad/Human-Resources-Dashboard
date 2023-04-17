@@ -6,7 +6,7 @@ body {
 
 menu {
     padding: 20px 0;
-    background: #454545;
+    background: rgba(69, 69, 69, 0.9);
 
     text-align: center;
     height: 400px;

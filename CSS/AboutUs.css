@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    background: rgba(246, 107, 14, 0.9);
+    margin: 5px;
+    padding: 8px;
+    border-radius: 20px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    font-family: arial;
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+    font-family: arial;
+    font-size: 19px;
+    margin: 15px;
+    text-align: center;
+    color: white;
+    background: #303242;
+    padding: 20px;
+    height: 50%;
+    width: 60%;
+    border-radius: 12px;
+}
