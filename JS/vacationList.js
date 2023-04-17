@@ -1,17 +1,22 @@
 function approveVacation(id) {
   let vacations = JSON.parse(localStorage.getItem("vacations"));
   vacations[id].status = "Approved";
-  //TODO: let employees = JSON.parse(localStorage.getItem("employees"));
-  // let emp = employees[id];
-  // let difference = vacations[id].endDate - vacations[id].beginDate;
-  // let days = difference / (1000 * 3600 * 24); // convert ms to days
-  // if (days > emp.availablePTO) {
-  //   alert("Not enough PTO");
-  //   return;
-  // }
-  // emp.availablePTO -= days;
-  // emp.approvedPTO += days;
-
+  
+  //change the employee's PTO
+  let employees = JSON.parse(localStorage.getItem("employees"));
+  let emp = employees[id];
+  let beginDate = new Date(vacations[id].beginDate);
+  let endDate = new Date(vacations[id].endDate);
+  let difference = endDate - beginDate;
+  let days = difference / (1000 * 3600 * 24); // convert ms to days
+  if (days > emp.availablePTO) {
+    alert("Not enough PTO");
+    return;
+  }
+  emp.availablePTO -= days;
+  emp.approvedPTO += days;
+  employees[id] = emp;
+  localStorage.setItem("employees", JSON.stringify(employees));
   // subtract the number of days from the available PTO
   // set the approved PTO to the number of days
 
