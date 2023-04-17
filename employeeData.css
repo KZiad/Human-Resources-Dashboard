@@ -1,0 +1,46 @@
+*{
+    font-family: Franklin Gothic Medium;
+}
+.centre 
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+::selection
+{
+    background: #1d1d1d;
+    color: #fff;
+    text-shadow: none;
+    position: fixed;
+}
+
+header {
+    background-color: #746767;
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+td {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: #dad3d3;
+}
+
+thead{
+    background-color: #dad3d3;
+}
+
