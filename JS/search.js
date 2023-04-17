@@ -48,13 +48,13 @@ function searchData() {
 
     const trie = new Trie();
     const employees = JSON.parse(localStorage.getItem("employees"));
-    employees.forEach(employee => {
-        console.log(employee.name);
-        trie.insert(employee.name.toLowerCase());
+    Object.keys(employees).forEach(id => {
+        // console.log(employee.name);
+        trie.insert(employees[id].empName.toLowerCase());
     })
 
     document.addEventListener("DOMContentLoaded", () => {
-        const table = document.querySelector('.search-div');
+        const table = document.querySelector('.search-insert');
         const input = document.getElementById("search-input");
         let prev = table.innerHTML;
 

@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="../CSS/index.css">
         <link rel="icon" href="../Images/favicon.ico" type="image/x-icon">
         <script src="../JS/search.js"></script>
-
     </head>
     <body>
 
@@ -32,31 +31,26 @@
                 <button id="add-employee-btn" type="button" onclick="window.location.href='addEmployees.html';">Add Employee</button>
                 <br><br>
 
-                <div>
-                    <table id="employee-table">
+                    <table>
                         <thead>
                             <tr>
                             <th>Name</th>
                             <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="search-div">
-                            <div >
-                                <tr>
+                        <script src="../JS/hr.js"></script>
+                        <tbody class="search-insert">
+                                <script>insertEmployees()</script>
+                                <!-- <tr>
                                 <td><button type="button" class="emp-btn" onclick="window.location.href = 'employeeData.html'">Ziad Naser Seif</button></td>
                                 <td>
                                     <button class="update-employee-btn" type="button" onclick="window.location.href='update.html';">Update</button>
                                     <button class="vacation-employee-btn" type="button" onclick="window.location.href='vacation.html';">Vacation</button>
                                 </td>
-                                </tr>
-                            </div>
+                                </tr> -->
                         </tbody>
                     </table>
-                </div>
             </form>
-
-
-            
         </div>
     </body>
 </html>
