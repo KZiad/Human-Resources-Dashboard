@@ -45,17 +45,8 @@ form div.part2{
 
 form div.Buttons{
     flex-direction: row;
+    margin: 50px 0;
 }
-
-/* .vl{
-    background-color: #565a77;
-    width: 4px;
-    height: 380px;
-    border-radius: 200px;
-    position: relative;
-    left: 50%;
-    bottom: 50%;
-} */
 
 form label.invisible{
     display: none;
@@ -114,6 +105,11 @@ form input[type= date]{
     border-radius: 7px;
     font-size: 16px;
     padding: 3px;
+    margin-left: 20px;
+}
+
+.Status{
+    display: flex;
 }
 
 form label[for = status]{
@@ -124,10 +120,10 @@ form label[for = status]{
     border-radius: 10px;
 }
 
-
 form select{
-    padding: 6px;
+    padding: 5px;
     border-radius: 5px;
+    margin-left: 30px;
 }
 
 form #vacation {
@@ -135,6 +131,8 @@ form #vacation {
     margin: 17px;
     padding: 12px 10px;
     border-radius: 7px;
+    display: flex;
+    margin: 35px 45px;
 }
 
 form #salary {
@@ -142,4 +140,6 @@ form #salary {
     margin: 17px;
     padding: 12px 10px;
     border-radius: 7px;
+    display: flex;
+    margin: 35px 45px;
 }
