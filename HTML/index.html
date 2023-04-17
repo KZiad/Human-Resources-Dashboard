@@ -2,16 +2,16 @@
 <html>
     <head>
         <title>Human Resources</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../CSS/Navigation.css">
         <link rel="stylesheet" href="../CSS/Transition.css">
         <link rel="stylesheet" href="../CSS/index.css">
-        <link rel="icon" href="../Images/favicon.ico" type="image/x-icon">
+        <script src="../JS/search.js"></script>
+
     </head>
     <body>
 
         <nav>
-            <a href="homepage.html" class="logo">FCAI HR</a>
+            <a href="index.html" class="logo">FCAI HR</a>
             <ul>
                 <li><a href="index.html"><b>Home</b></a></li>
                 <li><a href="aboutUs.html"><b>About Us</b></a></li>
@@ -23,8 +23,7 @@
 
             <form>
                 <div class="search">
-                    <input type="text" class="search-input" placeholder="Search...">
-                    <button type="submit" class="search-button">Search</button>
+                    <input type="text" id="search-input" placeholder="Search...">
                 </div>
                 <br><br>
                 
@@ -39,18 +38,23 @@
                             <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                            <td><button type="button" class="emp-btn" onclick="window.location.href = 'employeeData.html'">Ziad Naser Seif</button></td>
-                            <td>
-                                <button class="update-employee-btn" type="button" onclick="window.location.href='update.html';">Update</button>
-                                <button class="vacation-employee-btn" type="button" onclick="window.location.href='vacation.html';">Vacation</button>
-                            </td>
-                            </tr>
+                        <tbody class="search-div">
+                            <div >
+                                <tr>
+                                <td><button type="button" class="emp-btn" onclick="window.location.href = 'employeeData.html'">Ziad Naser Seif</button></td>
+                                <td>
+                                    <button class="update-employee-btn" type="button" onclick="window.location.href='update.html';">Update</button>
+                                    <button class="vacation-employee-btn" type="button" onclick="window.location.href='vacation.html';">Vacation</button>
+                                </td>
+                                </tr>
+                            </div>
                         </tbody>
                     </table>
                 </div>
             </form>
+
+
+            
         </div>
     </body>
 </html>

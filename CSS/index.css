@@ -10,7 +10,7 @@ h1 {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
     background-color: #f66b0e;
-    padding: 12px;
+    padding: 20px;
     border-radius: 10px;
 }
 
@@ -30,21 +30,7 @@ form {
 
 /* Search CSS */
 .search input {
-    position: relative;
-    left: 50px;
-    width: 50%;
-    margin: auto;
-    padding: 10px;
-    padding-top: 5px;
-    text-align: left;
-    border-radius: 10px;
-    font-size: 1em;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-.search button {
-    position: relative;
-    left: 50px;
-    width: fit-content;
+    width: 80%;
     margin: auto;
     padding: 10px;
     padding-top: 5px;
@@ -52,10 +38,10 @@ form {
     border-radius: 10px;
     font-size: 1em;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f66b0e;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
+}
+#search-input {
+    margin: auto;
+    /* padding-right: 10px; */
 }
 
 /* Add Employee button */
