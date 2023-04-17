@@ -1,3 +1,12 @@
+img{
+    float: left;
+    margin-top: 3px;
+    margin-left: 5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+}
+
 nav {
     background: rgba(48, 50, 66, 0.7);
     height: 80px;
