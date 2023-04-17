@@ -8,7 +8,7 @@ function insertEmployees() {
     Object.keys(employees).forEach(id => {
         const newRow = `
             <tr>
-                <td><button type="button" class="emp-btn" onclick="window.location.href = 'employeeData.html'">${employees[id].empName}</button></td>
+                <td><button type="button" class="emp-btn" onclick="window.location.href = 'employeeData.html?id=${id}'">${employees[id].empName}</button></td>
                 <td>
                     <button class="update-employee-btn" type="button" onclick="window.location.href='update.html?id=${id}';">Update</button>
                     <button class="vacation-employee-btn" type="button" onclick="window.location.href='vacation.html?id=${id}';">Vacation</button>
