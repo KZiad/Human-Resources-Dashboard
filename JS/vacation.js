@@ -50,22 +50,25 @@ function submitVacForm() {
   }
 
   if (localStorage.getItem("vacations") == null) {
-    localStorage.setItem("vacations", "[]");
+    localStorage.setItem("vacations", "{}");
   }
   var vacs = JSON.parse(localStorage.getItem("vacations"));
-
-  vacs[vacs.length] = vac;
+  if (vacs[vac.id] != null) {
+    alert("Error: Employee already has vacation request");
+    return;
+  }
+  vacs[vac.id] = vac;
   localStorage.setItem("vacations", JSON.stringify(vacs));
-
+  localStorage.removeItem("vacId");
   window.location.href = "vacationList.html";
 }
 
 function prefillForm() {
-  let vacid = localStorage.getItem("vacid");
-  let vacname = localStorage.getItem("vacname");
-  if (vacid != null && vacname != null) {
-    document.getElementById("empID").value = vacid;
-    document.getElementById("empName").value = vacname;
+  let vacId = localStorage.getItem("vacId");
+  if (vacId != null) {
+    document.getElementById("empID").value = vacId;
+    let empData = JSON.parse(localStorage.getItem("employees"));
+    document.getElementById("empName").value = empData[vacId].name;
     document.getElementById("empID").disabled = true;
     document.getElementById("empName").disabled = true;
   }
