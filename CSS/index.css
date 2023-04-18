@@ -30,7 +30,7 @@ form {
 
 /* Search CSS */
 .search input {
-    width: 80%;
+    width: 85%;
     margin: auto;
     padding: 10px;
     padding-top: 5px;
@@ -116,4 +116,5 @@ table button {
     cursor: pointer;
 }
 
-
+tr:first-child th:first-child { border-top-left-radius: 6px; }
+tr:first-child th:last-child { border-top-right-radius: 6px; }

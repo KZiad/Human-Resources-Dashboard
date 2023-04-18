@@ -1,6 +1,5 @@
 
 function insertEmployees() {
-    console.log(1000);
     const employees = JSON.parse(localStorage.getItem("employees"));
     
     const table = document.querySelector(".search-insert")

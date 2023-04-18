@@ -4,6 +4,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id');
 const employee = employees[id];
+
  // FILL THE FORM
 document.getElementById('id').value = id;
 document.getElementById('name').value = employee.empName;
@@ -11,7 +12,7 @@ document.getElementById('maleRadio').checked = employee.gender == "Male";
 document.getElementById('femaleRadio').checked = employee.gender == "Female";
 document.getElementById('email').value = employee.email;
 document.getElementById('address').value = employee.address;
-document.getElementById('number').value = employee.number;
+document.getElementById('number').value = employee.phone;
 document.getElementById('dob').valueAsDate = new Date(employee.DOB);
 document.getElementById('maritalStat').value = employee.maritalStat;
 document.getElementById('availablePTO').value = employee.availablePTO;
@@ -19,7 +20,6 @@ document.getElementById('approvedPTO').value = employee.approvedPTO;
 document.getElementById('salary').value = employee.salary;
 
 // UPDATE FORM 
-
 const updateButton = document.getElementById('update-button');
 updateButton.addEventListener('click', function() {
   employee.empName = document.getElementById('name').value;

@@ -17,7 +17,7 @@ function createEmployee() {
         availablePTO: document.getElementById("vacation").value,
         approvedPTO: 0,
         salary: document.getElementById("salary").value,
-        DOB: document.getElementById("dob").valueAsDate
+        DOB: document.getElementById("dob").value
     };
 
     if(validateData(employee)){
@@ -25,6 +25,7 @@ function createEmployee() {
         localStorage.setItem('employees', JSON.stringify(employees));
         alert("Employee added successfully");
         console.log(localStorage);
+        window.location.href = 'index.html';
     }
 }
 
@@ -75,7 +76,7 @@ function validateData(employee) {
     }
 
     let date  = new Date();
-    let dob = new Date(employee.DOB);
+    let dob = new Date(document.getElementById("dob").valueAsDate);
 
     if(((date - dob) / (1000 * 60 * 60 * 24 * 365)) < 16){
         alert("Invalid date...");
