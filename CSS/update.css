@@ -69,6 +69,10 @@ select {
   height: 40px;
 }
 
+form input[type = "number"]::-webkit-inner-spin-button{
+  display: none;
+}
+
 input[type="button"] {
   background-color: #f66b0e;
   color: #fff;

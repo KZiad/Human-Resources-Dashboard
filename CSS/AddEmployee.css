@@ -87,6 +87,10 @@ form label[for = gender]{
     border-radius: 10px;
 }
 
+form input[type = "number"]::-webkit-inner-spin-button{
+    display: none;
+}
+
 .genderType{
     font-size: 18px;
     font-family: sans-serif;
