@@ -1,4 +1,6 @@
 <h1>Project 1 (Human Resources Website):</h1>
+
+<h2>Phase 1 requirements</h2>
 <h3>Required minimum functionalities:</h3>
 <ol>
 <li> 
