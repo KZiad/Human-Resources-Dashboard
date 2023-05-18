@@ -1,4 +1,6 @@
 <h1>Project 1 (Human Resources Website):</h1>
+
+<h2>Phase 1 requirements</h2>
 <h3>Required minimum functionalities:</h3>
 <ol>
 <li> 
@@ -42,6 +44,7 @@ Website should have a well-designed navigation bar to go through all pages and
 a home page.
 </li>
   </ol>
+
 <h2>Phase 2 requirements</h2>
 <ol>
   <li>
@@ -54,5 +57,18 @@ Add a new homepage for your website with the four names of the recommended proje
 Applying CSS in a good way will be graded.
 Add CSS in external file(s).
   </li>
-  </ol>
+</ol>
+
+<h2>Phase 3 requirements</h2>
+<ol>
+  <li>
+      You are required to complete the functionalities of your website using Django framework.
+  </li>
+  <li>
+    Choose the suitable database engine to work with, connect it to Django and test your application well.
+  </li>
+  <li>
+      Add all AJAX code to connect both frontend and backend to work together
+  </li>
+</ol>
   
