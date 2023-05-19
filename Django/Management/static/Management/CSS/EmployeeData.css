@@ -1,0 +1,53 @@
+.head{
+    background: rgba(246, 107, 14, 0.9);
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    border-radius: 20px;
+    width: 270px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.info{
+    background: #f66b0e;
+    border-radius: 20px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    width: 90px;
+    margin: auto;
+}
+
+div.info.extra{
+    width: 225px;
+}
+
+div.info.double{
+    width: 135px;
+}
+
+td{
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    text-align: center;
+    color: white;
+    background: #303242;
+    padding: 13px;
+    height: 40px;
+    width: 250px;
+    border-radius: 12px;
+}
+
+table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 2px;
+}

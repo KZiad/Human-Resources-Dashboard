@@ -21,14 +21,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Management.urls')),
 ]
-
-"""
-    # MAKE ONE FOR EACH PAGE
-    # path('', include('AboutUs.urls')),
-    # path('', include('EmployeeData.urls')),
-    # path('', include('ProjectsPage.urls')),
-    # path('', include('HomePage.urls')),
-    # path('', include('Update.urls')),
-    # path('', include('Vacation.urls')),
-    # path('', include('VacationList.urls')),
-"""

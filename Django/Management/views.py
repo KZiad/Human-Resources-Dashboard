@@ -16,6 +16,9 @@ empData = [
         }
 ]
 
+def projects(request):
+        return render(request, 'Management/projects.html')
+
 def home(request):
         return render(request, 'Management/index.html')
 
