@@ -17,13 +17,13 @@ empData = [
 ]
 
 def home(request):
-        return render(request, 'Manage/index.html')
+        return render(request, 'Management/index.html')
 
 def about(request):
-        return render(request, 'Manage/aboutUs.html')
+        return render(request, 'Management/aboutUs.html')
 
 def data(request):
         context = {
                 'empData': empData
         }
-        return render(request, 'Manage/employeeData.html', context)
+        return render(request, 'Management/employeeData.html', context)
