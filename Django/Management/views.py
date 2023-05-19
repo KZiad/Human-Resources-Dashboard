@@ -30,3 +30,15 @@ def data(request):
                 'empData': empData
         }
         return render(request, 'Management/employeeData.html', context)
+
+def newEmp(request):
+        return render(request, 'Management/addEmployees.html')
+
+def update(request):
+        return render(request, 'Management/update.html')
+
+def vacation(request):
+        return render(request, 'Management/vacation.html')
+
+def vacationList(request):
+        return render(request, 'Management/vacationList.html')

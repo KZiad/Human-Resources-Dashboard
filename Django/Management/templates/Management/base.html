@@ -14,11 +14,11 @@
     <body>
         <nav>
             <img src="{% static 'Management/Images/logo.png' %}"/>
-            <a href="projects.html" class="logo">FCAI HR</a>
+            <a href="{% url 'hr-projects' %}" class="logo">FCAI HR</a>
             <ul>
-                <li><a href="index.html"><b>Home</b></a></li>
-                <li><a href="aboutUs.html"><b>About Us</b></a></li>
-                <li><a href="vacationList.html"><b>Vacation List</b></a></li>
+                <li><a href="{% url 'hr-home' %}"><b>Home</b></a></li>
+                <li><a href="{% url 'hr-about' %}"><b>About Us</b></a></li>
+                <li><a href="{% url 'hr-vacationList' %}"><b>Vacation List</b></a></li>
             </ul>
         </nav>
         <div class="transition">
