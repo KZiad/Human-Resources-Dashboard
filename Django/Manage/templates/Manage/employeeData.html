@@ -1,0 +1,125 @@
+{% extends 'Manage/base.html' %}
+
+{% block styles %}
+
+<link rel="stylesheet" href="../CSS/employeeData.css">
+<title> Employee page </title>
+<script src="../JS/empData.js"></script>
+
+{% endblock styles %}
+
+
+{% block content %}
+
+<div class="head">
+    <h1> Employee Data </h1> 
+</div>
+
+<table> 
+    <tbody>
+        {% for data in empData %}
+        <tr>
+            <td>
+                <div class="info">Name</div>
+            </td>
+            <td>
+                {{data.name}}
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="info">ID</div>
+            </td>
+            <td>
+                
+                {{data.id}}
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="info">E-Mail</div>
+            </td>
+            <td>
+                {{data.email}}
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="info">Address</div>
+            </td>
+            <td>
+                {{data.address}}
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="info">Number</div>
+            </td>
+            <td>
+                {{data.num}}
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="info">Gender</div>
+            </td>
+            <td>
+                {{data.gender}}
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="info double">Marital Status</div>
+            </td>
+            <td>
+                {{data.status}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="info extra">Available Vacation Days</div>
+            </td>
+            <td>
+                {{data.fVacation}}
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="info extra">Approved Vacation Days</div>
+            </td>
+            <td>
+                {{data.aVacation}}
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="info">Salary</div>
+            </td>
+            <td>
+                {{data.salary}}
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="info double">Date Of Birth</div>
+            </td>
+            <td>
+                {{data.dob}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

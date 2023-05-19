@@ -1,0 +1,60 @@
+{% extends 'Manage/base.html' %}
+
+{% block styles %}
+
+<link rel="stylesheet" href="../CSS/Vacation.css" />
+<script type="text/javascript" src="../JS/vacation.js"> </script>
+<title>Vacation Application Form</title>
+
+{% endblock styles %}
+
+{% block content %}
+<div>
+  <h1>Apply for Vacation</h1>
+  <form class="vform">
+      <div class="vform-top">
+        <label for="empID">ID</label>
+        <input class="field" type="number" id="empID" name="empID" />
+        
+        <label for="empName">Full Name</label>
+        <input class="field" type="text" name="name" id="empName"/>
+        <script>prefillForm()</script>
+      </div>
+      
+      <div class="vform-mid">
+        <div class="form-half date">
+          <label>Starting Date</label>
+          <input class="field" type="date" name="beginDate" />
+          
+          <label>Ending Date</label>
+          <input class="field" type="date" name="endDate" />
+        </div>
+        
+        <div class="form-half reason">
+          <label>Reason</label>
+          <textarea
+            class="field"
+            rows="5"
+            cols="30"
+            name="reason"
+            ></textarea>
+          </div>
+        </div>
+        
+        <div class="input-part">
+        <input
+        type="button"
+        class="abutton"
+        value="Submit Request"
+        onclick="submitVacForm()"
+        />
+        <input
+          type="button"
+          class="abutton"
+          value="Cancel"
+          onclick="window.location.href = 'index.html'"
+          />
+      </div>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'Manage/base.html' %}
+
+{% block styles %}
+
+<link rel="stylesheet" href="../CSS/VacationList.css" />
+<title>All Vacations</title>
+<script type="text/javascript" src="../JS/vacationList.js"> </script>
+{% endblock styles %}
+
+
+{% block content %}
+
+<h1>All Vacations</h1>
+
+<div class="vacs">
+  <script> loadVacCards() </script>
+
+{% endblock content %}
