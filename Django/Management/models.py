@@ -15,3 +15,7 @@ class Employee(models.Model):
     salary = models.IntegerField()
     dob = models.DateField()
     dateCreated = models.DateField(default= datetime.date.today, null= True)
+
+    # This is to be able to read the employee name and ID in admin menu
+    def __str__(self):
+        return f'{self.name} -- {self.id}'
