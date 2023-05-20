@@ -11,16 +11,7 @@ def about(request):
         return render(request, 'Management/aboutUs.html')
 
 def data(request):
-        context = {
-                'empData': Employee.objects.all()
-        }
-        return render(request, 'Management/employeeData.html', context)
-
-def newEmp(request):
-        return render(request, 'Management/addEmployees.html')
-
-def update(request):
-        return render(request, 'Management/update.html')
+        return render(request, 'Management/employeeData.html', {'empData': Employee.objects.all()})
 
 def vacation(request):
         return render(request, 'Management/vacation.html')
