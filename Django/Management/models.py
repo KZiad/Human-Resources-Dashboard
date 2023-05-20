@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import timezone
+import datetime
 
 
 class Employee(models.Model):
@@ -9,8 +9,9 @@ class Employee(models.Model):
     address = models.CharField(max_length = 100)
     mobile = models.CharField(max_length = 11)
     gender = models.CharField(max_length = 6)
+    status = models.CharField(max_length= 12)
     availableVacation = models.IntegerField()
     approvedVacation = models.IntegerField()
     salary = models.IntegerField()
-    dob = models.DateTimeField()
-    dateCreated = models.DateTimeField(default= timezone.now)
+    dob = models.DateField()
+    dateCreated = models.DateField(default= datetime.date.today, null= True)
