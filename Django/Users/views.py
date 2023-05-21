@@ -7,16 +7,18 @@ from Management.models import Employee
 
 def createEmployee(request):
     if request.method == 'POST':
-           form_name = request.POST.get('name')
-           form_id = request.POST.get('id')
-           form_email = request.POST.get('email')
-           form_address = request.POST.get('address')
-           form_number = request.POST.get('number')
-           form_gender = request.POST.get('gender')
-           form_dob = request.POST.get('dob')
-           form_status = request.POST.get('status')
-           form_vacation = request.POST.get('vacation')
-           form_salary = request.POST.get('salary')
+           form_data = request.POST
+           print(form_data)
+           form_name = form_data['name']
+           form_id = form_data['id']
+           form_email = form_data['email']
+           form_address = form_data['address']
+           form_number = form_data['number']
+           form_gender = form_data['gender']
+           form_dob = form_data['dob']
+           form_status = form_data['status']
+           form_vacation = form_data['vacation']
+           form_salary = form_data['salary']
            Employee.objects.create(id = form_id, name = form_name, email = form_email, address = form_address, mobile = form_number, gender = form_gender,
                                     status = form_status, availableVacation = form_vacation, approvedVacation = 0, dob = form_dob, salary = form_salary)
            return redirect('hr-home')
@@ -24,3 +26,12 @@ def createEmployee(request):
 
 def update(request):
         return render(request, 'Users/update.html')
+
+def data(request):
+        return render(request, 'Users/employeeData.html', {'empData': Employee.objects.all()})
+
+def vacation(request):
+        return render(request, 'Management/vacation.html')
+
+def vacationList(request):
+        return render(request, 'Management/vacationList.html')
