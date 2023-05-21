@@ -7,21 +7,23 @@ from Management.models import Employee
 
 def createEmployee(request):
     if request.method == 'POST':
-           form_data = request.POST
-           print(form_data)
-           form_name = form_data['name']
-           form_id = form_data['id']
-           form_email = form_data['email']
-           form_address = form_data['address']
-           form_number = form_data['number']
-           form_gender = form_data['gender']
-           form_dob = form_data['dob']
-           form_status = form_data['status']
-           form_vacation = form_data['vacation']
-           form_salary = form_data['salary']
-           Employee.objects.create(id = form_id, name = form_name, email = form_email, address = form_address, mobile = form_number, gender = form_gender,
-                                    status = form_status, availableVacation = form_vacation, approvedVacation = 0, dob = form_dob, salary = form_salary)
-           return redirect('hr-home')
+        form_data = request.POST
+
+        form_name = form_data['name']
+        form_id = form_data['id']
+        form_email = form_data['email']
+        form_address = form_data['address']
+        form_number = form_data['number']
+        form_gender = form_data['gender']
+        form_dob = form_data['dob']
+        form_status = form_data['status']
+        form_vacation = form_data['vacation']
+        form_salary = form_data['salary']
+
+        Employee.objects.create(id = form_id, name = form_name, email = form_email, address = form_address, mobile = form_number, gender = form_gender,
+                                status = form_status, availableVacation = form_vacation, approvedVacation = 0, dob = form_dob, salary = form_salary)
+        return redirect('hr-home')
+    
     return render(request, 'Users/addEmployees.html')
 
 def update(request):
