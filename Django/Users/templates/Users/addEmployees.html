@@ -72,18 +72,18 @@
                 
                 <div class="Vacation">
                     <label for="vacationDays", class="invisible">Vacation Days</label>
-                    <input type="number", name="vacation", name="Vacation", placeholder="Available Vacation Days">
+                    <input type="number", name="vacation", placeholder="Available Vacation Days">
                 </div>
 
                 <div class="Salary">
                     <label for="salary", class="invisible">Salary</label>
-                    <input type="number", name="salary", name="Salary", placeholder="Salary">
+                    <input type="number", name="salary", placeholder="Salary">
                 </div>
             </div>
         </div>
         
         <div class="Buttons">
-            <input type="button", value="Add", class = "buttons", type="submit">
+            <input type="submit", value="Add", class = "buttons">
             <input type="button", value="Cancel", class = "buttons", onclick= "window.location.href='{% url 'hr-home' %}';">
         </div>
 </form>
