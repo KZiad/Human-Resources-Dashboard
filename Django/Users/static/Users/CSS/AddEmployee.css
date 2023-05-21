@@ -131,7 +131,7 @@ form select{
     margin-left: 30px;
 }
 
-form #vacation {
+form input[name = vacation] {
     width: 200px;
     margin: 17px;
     padding: 12px 10px;
@@ -140,7 +140,7 @@ form #vacation {
     margin: 35px 45px;
 }
 
-form #salary {
+form input[name = salary] {
     width: 200px;
     margin: 17px;
     padding: 12px 10px;

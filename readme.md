@@ -71,4 +71,10 @@ Add CSS in external file(s).
       Add all AJAX code to connect both frontend and backend to work together
   </li>
 </ol>
+
+<h2> Phase 3 Requirements </h2>
+<ol>
+  <li> Ajax + Django</li>
+  </ol>
+  
   
