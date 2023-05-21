@@ -24,8 +24,6 @@ def createEmployee(request):
            return redirect('hr-home')
     return render(request, 'Users/addEmployees.html')
 
-    return render(request, 'Users/addEmployees.html')
-
 def update(request):
         return render(request, 'Users/update.html')
 
