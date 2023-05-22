@@ -4,6 +4,8 @@
 {% block styles %}
 
 <link rel="stylesheet" href="{% static 'Users/CSS/AddEmployee.css' %}">
+<link rel="stylesheet" href="{% static 'Management/CSS/Message.css' %}">
+
 <title>Add Employees</title>
 
 {% endblock styles %}
@@ -14,70 +16,83 @@
     <h1>Add Employee</h1>
 </div>
 
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">
+                {{ message|safe }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
 <form method = "POST">
     {% csrf_token %}
         <div class="bigpart">
             <div class="part1">
-                
+
                 <div class="Name">
                     <label for="name", class="invisible">Full Name</label> 
-                    <input type="text", name="name", placeholder="Name", class="bar">
+                    {{form.name}}
+                    {{form.name.errors}}
                 </div>
                 
                 <div class="ID">
                     <label for="id", class="invisible">ID</label>
-                    <input type="number", name="id", placeholder="ID", class="bar">
+                    {{form.id}}
+                    {{form.id.errors}}
                 </div>
                 
                 <div class="Email">
                     <label for="email", class="invisible">E-Mail </label>
-                    <input type="email", name="email", placeholder="E-Mail", class="bar">
+                    {{form.email}}
+                    {{form.email.errors}}
                 </div>
                 
                 <div class="Address">
                     <label for="address", class="invisible">Address</label>
-                    <input type="text", name="address", placeholder="Address", class="bar">
+                    {{form.address}}
+                    {{form.address.errors}}
                 </div>
                 
                 <div class="Number">
                     <label for="number", class="invisible">Phone Number</label>
-                    <input type="tel", name="number", placeholder="Mobile Number", class="bar">
+                    {{form.number}}
+                    {{form.number.errors}}
                 </div>
-
             </div>
             
             <div class="part2">
                 <div class="Gender">
                     <label for="gender">Gender</label><br>
                     <div class="genderType">
-                        <input type="radio", name="gender", value="Male">Male
-                        <input type="radio", name="gender", value="Female">Female
+                        {{form.gender.errors}}
+                        {{form.gender}}
                     </div>
                 </div>
                 
                 <div class="Date">
                     <label for="date">Date of Birth </label>
-                    <input type="date", name="dob">
+                    {{form.dob}}
                 </div>
                 
                 <div class="Status">
                     <label for="status">Marital Status</label>
-                    <select name="status">
-                        <option value="undefined" selected>------</option>
-                        <option value="Single">Single</option>
-                        <option value="Married">Married</option>
-                        <option value="Widowed">Widowed</option>
-                    </select>
+                    {{form.status}}
+                    {{form.status.errors}}
                 </div>
                 
                 <div class="Vacation">
                     <label for="vacationDays", class="invisible">Vacation Days</label>
-                    <input type="number", name="vacation", placeholder="Available Vacation Days">
+                    {{form.availableVacation}}
+                    {{form.availableVacation.errors}}
                 </div>
 
                 <div class="Salary">
                     <label for="salary", class="invisible">Salary</label>
-                    <input type="number", name="salary", placeholder="Salary">
+                    {{form.salary}}
+                    {{form.salary.errors}}
                 </div>
             </div>
         </div>
@@ -87,7 +102,5 @@
             <input type="button", value="Cancel", class = "buttons", onclick= "window.location.href='{% url 'hr-home' %}';">
         </div>
 </form>
-
-<script src="../JS/addEmp.js"></script>
 
 {% endblock content %}
