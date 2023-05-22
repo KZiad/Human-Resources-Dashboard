@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from Management.models import Employee
 from .forms import EmployeeRegistrationForm
-from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 
