@@ -18,13 +18,12 @@
 
 <table> 
     <tbody>
-        {% for data in empData %}
         <tr>
             <td>
                 <div class="info">Name</div>
             </td>
             <td>
-                {{data.name}}
+                {{empData.name}}
             </td>
         </tr>
         
@@ -34,7 +33,7 @@
             </td>
             <td>
                 
-                {{data.id}}
+                {{empData.id}}
                 
             </td>
         </tr>
@@ -44,7 +43,7 @@
                 <div class="info">E-Mail</div>
             </td>
             <td>
-                {{data.email}}
+                {{empData.email}}
             </td>
         </tr>
         
@@ -53,7 +52,7 @@
                 <div class="info">Address</div>
             </td>
             <td>
-                {{data.address}}
+                {{empData.address}}
             </td>
         </tr>
         
@@ -62,7 +61,7 @@
                 <div class="info">Number</div>
             </td>
             <td>
-                {{data.number}}
+                {{empData.number}}
             </td>
         </tr>
         
@@ -71,7 +70,7 @@
                 <div class="info">Gender</div>
             </td>
             <td>
-                {{data.gender}}
+                {{empData.gender}}
             </td>
         </tr>
         
@@ -80,7 +79,7 @@
                 <div class="info double">Marital Status</div>
             </td>
             <td>
-                {{data.status}}
+                {{empData.status}}
             </td>
         </tr>
 
@@ -89,7 +88,7 @@
                 <div class="info extra">Available Vacation Days</div>
             </td>
             <td>
-                {{data.availableVacation}}
+                {{empData.availableVacation}}
             </td>
         </tr>
         
@@ -98,7 +97,7 @@
                 <div class="info extra">Approved Vacation Days</div>
             </td>
             <td>
-                {{data.approvedVacation}}
+                {{empData.approvedVacation}}
             </td>
         </tr>
         
@@ -107,7 +106,7 @@
                 <div class="info">Salary</div>
             </td>
             <td>
-                {{data.salary}}
+                {{empData.salary}}
             </td>
         </tr>
         
@@ -116,10 +115,9 @@
                 <div class="info double">Date Of Birth</div>
             </td>
             <td>
-                {{data.dob}}
+                {{empData.dob}}
             </td>
         </tr>
-        {% endfor %}
     </tbody>
 </table>
 

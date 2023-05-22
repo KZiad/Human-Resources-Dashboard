@@ -27,8 +27,8 @@ def createEmployee(request):
 def update(request):
         return render(request, 'Users/update.html')
 
-def data(request):
-        return render(request, 'Users/employeeData.html', {'empData': Employee.objects.all()})
+def data(request, id):
+        return render(request, 'Users/employeeData.html', {'empData': Employee.objects.get(id=id)})
 
 def vacation(request):
         return render(request, 'Management/vacation.html')
