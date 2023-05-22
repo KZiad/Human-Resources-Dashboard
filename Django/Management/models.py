@@ -11,7 +11,7 @@ class Employee(models.Model):
     gender = models.CharField(max_length = 6)
     status = models.CharField(max_length= 12)
     availableVacation = models.IntegerField()
-    approvedVacation = models.IntegerField()
+    approvedVacation = models.IntegerField(default= 0)
     salary = models.IntegerField()
     dob = models.DateField()
     dateCreated = models.DateField(default= datetime.date.today, null= True)
