@@ -8,7 +8,7 @@ urlpatterns = [
     path('about/', views.about, name='hr-about'),
     path('data/<id>/', userViews.data, name='hr-data'),
     path('addEmployee/', userViews.createEmployee , name='hr-addEmployee'),
-    path('updateData/', userViews.update, name='hr-updateData'),
+    path('updateData/<id>/', userViews.update, name='hr-updateData'),
     path('vacations/', userViews.vacation, name='hr-vacation'),
     path('vacationList/', userViews.vacationList, name='hr-vacationList'),
 ]
