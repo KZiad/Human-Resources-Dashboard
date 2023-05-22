@@ -6,7 +6,6 @@ from .forms import EmployeeRegistrationForm, EmployeeUpdateForm
 # Create your views here.
 
 def createEmployee(request):
-    
         if request.method == 'POST':
                 form = EmployeeRegistrationForm(request.POST)
 
@@ -18,6 +17,9 @@ def createEmployee(request):
                         form.save()
                         messages.success(request, "Employee added successfully")
                         return redirect('hr-home')
+                else:
+                        messages.error(request, "Error please check your date input")
+                        return render(request, 'Users/addEmployees.html', {'form': form})
         else:
                 form = EmployeeRegistrationForm()
 
@@ -34,6 +36,9 @@ def update(request, id):
                         form.save()
                         messages.info(request, "Employee updated successfully")
                         return redirect('hr-home')
+                else:
+                        messages.error(request, "Error please check your date input")
+                        return render(request, 'Users/addEmployees.html', {'form': form})
         else:
                 form = EmployeeUpdateForm(instance=Employee.objects.get(id=id))
 
