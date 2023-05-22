@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from Management.models import Employee, Vacation
 import datetime
+from .forms import EmployeeRegistrationForm, EmployeeUpdateForm
+
 # Create your views here.
 
 def createEmployee(request):
@@ -24,11 +25,13 @@ def createEmployee(request):
            return redirect('hr-home')
     return render(request, 'Users/addEmployees.html')
 
-def update(request):
-        return render(request, 'Users/update.html')
+def delete(request, id):
+        Employee.objects.get(id=id).delete()
+        messages.info(request, "Employee deleted successfully")
+        return redirect('hr-home')
 
-def data(request):
-        return render(request, 'Users/employeeData.html', {'empData': Employee.objects.all()})
+def data(request, id):
+        return render(request, 'Users/employeeData.html', {'empData': Employee.objects.get(id=id)})
 
 def vacation(request, id):
         if (request.method == 'POST'):

@@ -6,9 +6,10 @@ urlpatterns = [
     path('', views.projects, name='hr-projects'),
     path('home/', views.home, name='hr-home'),
     path('about/', views.about, name='hr-about'),
-    path('data/', userViews.data, name='hr-data'),
+    path('data/<id>/', userViews.data, name='hr-data'),
     path('addEmployee/', userViews.createEmployee , name='hr-addEmployee'),
-    path('updateData/', userViews.update, name='hr-updateData'),
+    path('updateData/<id>/', userViews.update, name='hr-updateData'),
+    path('deleteUser/<id>/', userViews.delete, name='hr-deleteData'),
     path('vacations/', userViews.vacation, name='hr-vacation'),
     path('vacationList/', userViews.vacationList, name='hr-vacationList'),
 ]

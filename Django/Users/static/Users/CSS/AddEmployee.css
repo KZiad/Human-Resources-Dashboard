@@ -1,7 +1,7 @@
 .head{
     background: rgba(246, 107, 14, 0.9);
     display: flex;
-    margin: auto;
+    margin-left: 42.5%;
     margin-top: 20px;
     margin-bottom: 20px;
     justify-content: center;
@@ -52,7 +52,7 @@ form label.invisible{
     display: none;
 }
 
-form input.bar {
+form input[name = name], input[name = id], input[name = email], input[name = address], input[name = number]{
     width: 300px;
     margin: 17px;
     padding: 12px 10px;
@@ -91,30 +91,39 @@ form input[type = "number"]::-webkit-inner-spin-button{
     display: none;
 }
 
-.genderType{
-    font-size: 18px;
+.genderType select{
+    font-size: 15px;
     font-family: sans-serif;
     margin: auto;
-    margin-inline: 20px;
+    margin-left: 50px;
+    margin-top: 3px;
 }
 
 form label[for = date]{
-    font-size: 20px;
+    font-size: 19px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f66b0e;
     padding: 7px;
     border-radius: 10px;
 }
 
-form input[type= date]{
+form input[name= dob]{
     border-radius: 7px;
-    font-size: 16px;
+    font-size: 15px;
+    width: 40%;
     padding: 3px;
     margin-left: 20px;
 }
 
 .Status{
     display: flex;
+}
+
+.Status select{
+    font-size: 15px;
+    font-family: sans-serif;
+    margin: auto;
+    margin-left: 30px;
 }
 
 form label[for = status]{
@@ -131,7 +140,7 @@ form select{
     margin-left: 30px;
 }
 
-form input[name = vacation] {
+form input[name = availableVacation]{
     width: 200px;
     margin: 17px;
     padding: 12px 10px;
@@ -148,3 +157,12 @@ form input[name = salary] {
     display: flex;
     margin: 35px 45px;
 }
+
+.errorlist{
+    color: rgb(255, 162, 56);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 60%;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}  

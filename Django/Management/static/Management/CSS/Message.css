@@ -1,0 +1,29 @@
+ul.messages {
+    margin-left: 38%;
+    margin-bottom: 20px;
+    padding: auto;
+    list-style-type: none;
+    width: 360px;
+}
+
+ul.messages li.success,
+ul.messages li.warning,
+ul.messages li.error,
+ul.messages li.info {
+    border-radius: 15px;
+    font-size: large;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:14px 20px;
+    list-style:none;
+    color:#fff;
+    text-align: center;
+}
+
+ul.messages li.success { background:#22ca52; }
+
+ul.messages li.error { background:#a30029; color:white; }
+
+ul.messages li.info { background:#1b72b9; color: white; }
+
+ul.messages li.warning { background:#de9404; color: white;}

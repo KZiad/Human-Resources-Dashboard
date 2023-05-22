@@ -49,7 +49,7 @@ input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="tel"],
-input[type="date"],
+input[type="dob"],
 select {
   width: 100%;
   padding: 12px;
@@ -61,10 +61,6 @@ select {
   font-family: Arial, sans-serif;
 }
 
-input[type="radio"] {
-  margin-right: 10px;
-}
-
 select {
   height: 40px;
 }
@@ -73,7 +69,7 @@ form input[type = "number"]::-webkit-inner-spin-button{
   display: none;
 }
 
-input[type="button"] {
+input[type="button"], input[type="submit"] {
   background-color: #f66b0e;
   color: #fff;
   border: none;
