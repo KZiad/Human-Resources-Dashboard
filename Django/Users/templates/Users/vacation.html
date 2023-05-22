@@ -15,30 +15,25 @@
       {% csrf_token %}
       <div class="vform-top">
         <label for="empID">ID</label>
-        <input class="field" type="number" id="empID" name="empID" />
+        {{form.id}}
         
         <label for="empName">Full Name</label>
-        <input class="field" type="text" name="name" id="empName"/>
+        {{form.name}}
         <script>prefillForm()</script>
       </div>
       
       <div class="vform-mid">
         <div class="form-half date">
           <label>Starting Date</label>
-          <input class="field" type="date" name="beginDate" />
+          {{form.startDate}}
           
           <label>Ending Date</label>
-          <input class="field" type="date" name="endDate" />
+          {{form.endDate}}
         </div>
         
         <div class="form-half reason">
           <label>Reason</label>
-          <textarea
-            class="field"
-            rows="5"
-            cols="30"
-            name="reason"
-            ></textarea>
+          {{form.reason}}
           </div>
         </div>
         
