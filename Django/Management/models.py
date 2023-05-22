@@ -7,7 +7,7 @@ class Employee(models.Model):
     name = models.CharField(max_length = 100)
     email = models.EmailField(max_length = 254)
     address = models.CharField(max_length = 100)
-    mobile = models.CharField(max_length = 11)
+    number = models.CharField(max_length = 11)
     gender = models.CharField(max_length = 6)
     status = models.CharField(max_length= 12)
     availableVacation = models.IntegerField()
