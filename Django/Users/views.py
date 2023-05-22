@@ -99,4 +99,4 @@ def vacation(request, id):
         return render(request, 'Users/vacation.html')
 
 def vacationList(request):
-        return render(request, 'Management/vacationList.html')
+        return render(request, 'Users/vacationList.html')
