@@ -6,18 +6,16 @@ def projects(request):
         return render(request, 'Management/projects.html')
 
 def home(request):
-        return render(request, 'Management/index.html')
+        employees = Employee.objects.all()     
+        return render(request, 'Management/index.html', {'emp': employees})
+                
 
 def about(request):
         return render(request, 'Management/aboutUs.html')
 
-def searchEmployee(request):
-        searchTerm = request.GET.get('searchTerm', '')
-        
-        if searchTerm:
-                employees = Employee.objects.filter(empName__icontains=searchTerm)
-        else:
-                employees = Employee.objects.all()
-                
-        data = [{'empName': employee.name, 'id': employee.id} for employee in employees]
-        return JsonResponse(data, safe=False)
+def searchEmp(request):
+        if request.method == 'GET':
+                search_input = request.GET('search-input', '')
+                filteredEmp = Employee.objects.filter(name__startswith=search_input)
+                serializeEmp = [{'name': emp.name, 'id': emp.id} for emp in filteredEmp]
+                return JsonResponse(serializeEmp, safe=False)
