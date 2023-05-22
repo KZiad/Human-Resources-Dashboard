@@ -12,85 +12,58 @@
 {% block content %}
 <h1>Update Employee Data</h1>
 
-<form>
-  <label for="id">ID</label>
-  <input type="number" id="id" name="ID" />
-  <br /><br />
+<form method = "POST">
+	{% csrf_token %}
 
-  <label for="name">Full Name</label>
-  <input type="text" id="name" name="Name"/>
-  <br /><br />
+		<label for="id">ID</label>
+		{{form.id}}
+		<br/><br/>
 
-  <label for="gender">Gender</label><br />
-  <input type="radio" id="maleRadio" name="gender"  />Male
-  <input type="radio" id="femaleRadio" name="gender"/>Female <br /><br />
+		<label for="name">Full Name</label>
+		{{form.name}}
+		<br/><br/>
 
-  <label for="email">E-Mail </label>
-  <input
-    type="email"
-    id="email"
-    name="E-Mail"
-  />
-  <br /><br />
+		<label for="gender">Gender</label><br/>
+		{{form.gender}}
 
-  <label for="address">Address</label>
-  <input type="text" id="address" name="Address" />
-  <br /><br />
+		<label for="email">E-Mail </label>
+		{{form.email}}
+		<br/><br/>
 
-  <label for="number">Phone Number </label>
-  <input type="tel" id="number" name="Number" />
-  <br /><br />
+		<label for="address">Address</label>
+		{{form.address}}
+		<br/><br/>
 
-  <label for="date">Date of Birth </label>
-  <input type="date" id="dob" name="Date Of Birth"  />
-  <br /><br />
+		<label for="number">Phone Number </label>
+		{{form.number}}
+		<br/><br/>
 
-  <label for="maritalStat">Marital Status</label>
-  <select id="maritalStat" name="Marital Status">
-    <option value="undefined" selected>----</option>
-    <option value="Single">Single</option>
-    <option value="Married">Married</option>
-    <option value="Widowed">Widowed</option>
-  </select>
-  <br /><br />
+		<label for="date">Date of Birth </label>
+		{{form.dob}}
+		<br/><br/>
 
-  <label for="number of available vacation days">
-    Number of available vacation days
-  </label>
-  <input type="number" value="28"  id="availablePTO"/>
+		<label for="maritalStat">Marital Status</label>
+		{{form.status}}
+		<br/><br/>
 
-  <br /><br />
+		<label for="number of available vacation days"> Number of available vacation days</label>
+		{{form.availableVacation}}
 
-  <label for="number of approved vacation days">
-    Number of actual approved vacation days
-  </label>
-  <input type="number" id="approvedPTO" disabled="true" />
-  <br /><br />
+		<br/><br/>
 
-  <label for="salary">Salary</label>
-  <input type="number" id="salary" name="Salary" />
-  <br /><br />
-  <div class="buttons">
-  <input
-    type="button"
-    value="Update"
-    id="update-button"
-    onclick="javascript:void(0);"
-  />
-  <input
-    type="button"
-    value="Cancel"
-    onclick="window.location.href='{% url 'hr-home' %}';"
-  />
-  <input
-    type="button"
-    value="Delete"
-    id="delete-button"
-    onclick="javascript:void(0);"
-  />
-</div>
+		<label for="number of approved vacation days"> Number of actual approved vacation days</label>
+		{{form.approvedVacation}}
+		<br/><br/>
+
+		<label for="salary">Salary</label>
+		{{form.salary}}
+		<br/><br/>
+
+	<div class="buttons">
+	<input type="submit" value="Update" id="update-button"/>
+	<input type="button" value="Delete" id="delete-button" onclick="window.location.href='{% url 'hr-deleteData' id %}';"/>
+	<input type="button" value="Cancel" onclick="window.location.href='{% url 'hr-home' %}';"/>
+	</div>
 </form>
-
-<script type="text/javascript" src="../JS/update.js"> </script>
 
 {% endblock content %}
