@@ -51,7 +51,7 @@ label{
   /*change resize anchor to be top*/
 
 }
-.field {
+.field, input[name=name], input[name=id]{
   width: 30%;
   margin: 20px;
   padding: 10px;

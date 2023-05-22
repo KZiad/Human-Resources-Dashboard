@@ -63,12 +63,14 @@ def vacation(request, id):
                         approvedVacation = approvedVacation[0]['approvedVacation']
                         if (availableVacation < numDays):
                                 return render(request, 'Management/vacation.html', {'error': 'Not enough vacation days'})
+                        Employee.objects.filter(id = id).update(availableVacation = availableVacation - numDays)
+                        Employee.objects.filter(id = id).update(approvedVacation = approvedVacation + numDays)
                         form.save()
                         
         else:
-                form = EmployeeUpdateForm(instance=Employee.objects.get(id=id))
+                form = EmployeeVacationForm(instance=Employee.objects.get(id=id))
 
-        return render(request, 'Users/update.html', {'form': form, 'id': id})
+        return render(request, 'Users/vacation.html', {'form': form, 'id': id})
         if (request.method == 'POST'):
                 form_data = request.POST
                 print(form_data)
@@ -84,13 +86,6 @@ def vacation(request, id):
                 # if the employee has enough days, then create the vacation request
                 # else, return an error message
                 
-                availableVacation = Employee.objects.filter(id = form_id).values('availableVacation')
-                print(availableVacation)
-                availableVacation = availableVacation[0]['availableVacation']
-                approvedVacation = Employee.objects.filter(id = form_id).values('approvedVacation')
-                approvedVacation = approvedVacation[0]['approvedVacation']
-                if (availableVacation < numDays):
-                        return render(request, 'Management/vacation.html', {'error': 'Not enough vacation days'})
                 Employee.objects.filter(id = form_id).update(availableVacation = availableVacation - numDays)
                 Employee.objects.filter(id = form_id).update(approvedVacation = approvedVacation + numDays)
                 VacEmployee = Employee.objects.get(id = form_id)

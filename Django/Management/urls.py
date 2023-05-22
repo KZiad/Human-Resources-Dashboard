@@ -10,6 +10,6 @@ urlpatterns = [
     path('addEmployee/', userViews.createEmployee , name='hr-addEmployee'),
     path('updateData/<id>/', userViews.update, name='hr-updateData'),
     path('deleteUser/<id>/', userViews.delete, name='hr-deleteData'),
-    path('vacations/', userViews.vacation, name='hr-vacation'),
+    path('vacations/<id>/', userViews.vacation, name='hr-vacation'),
     path('vacationList/', userViews.vacationList, name='hr-vacationList'),
 ]
