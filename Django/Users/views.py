@@ -17,9 +17,6 @@ def createEmployee(request):
                         form.save()
                         messages.success(request, "Employee added successfully")
                         return redirect('hr-home')
-                else:
-                        messages.error(request, "Error please check your date input")
-                        return render(request, 'Users/addEmployees.html', {'form': form})
         else:
                 form = EmployeeRegistrationForm()
 
@@ -36,9 +33,6 @@ def update(request, id):
                         form.save()
                         messages.info(request, "Employee updated successfully")
                         return redirect('hr-home')
-                else:
-                        messages.error(request, "Error please check your date input")
-                        return render(request, 'Users/addEmployees.html', {'form': form})
         else:
                 form = EmployeeUpdateForm(instance=Employee.objects.get(id=id))
 
