@@ -61,8 +61,9 @@ def vacation(request, id):
                         availableVacation = Employee.objects.get(id = id).availableVacation
                         approvedVacation = Employee.objects.get(id = id).approvedVacation
                         if (availableVacation < numDays):
-                                messages.error(request, "Not enough vacation days")
-                                return render(request, 'Management/vacation.html')
+                                # return error message
+                                messages.warning(request, "Employee does not have enough vacation days")
+                                return render(request, 'Users/vacation.html', {'form': form})
                         employee = Employee.objects.get(id = id)
                         employee.availableVacation = availableVacation - numDays
                         employee.approvedVacation = approvedVacation + numDays
@@ -84,6 +85,8 @@ def vacation(request, id):
 
         return render(request, 'Users/vacation.html', {'form': form})
         
+
+# poor man's api calls
 def deleteVacation(request, id):
         Vacation.objects.get(id=id).delete()
         messages.info(request, "Vacation request deleted successfully")

@@ -1,7 +1,7 @@
 ul.messages {
-    margin-left: 38%;
+    margin: auto;
     margin-bottom: 20px;
-    padding: auto;
+    padding: 0;
     list-style-type: none;
     width: 360px;
 }
