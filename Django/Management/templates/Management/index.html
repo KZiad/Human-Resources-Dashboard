@@ -48,7 +48,7 @@
                     <td><button type="button" class="emp-btn" onclick="window.location.href='{% url 'hr-data' e.id %}';">{{e.name}}</button></td>
                     <td>
                         <button class="update-employee-btn" type="button" onclick="window.location.href='{% url 'hr-updateData' e.id %}';">Update</button>
-                        {% comment %} <button class="vacation-employee-btn" type="button" onclick="window.location.href='vacation.html?id=${employee.id}';">Vacation</button> {% endcomment %}
+                        <button class="vacation-employee-btn" type="button" onclick="window.location.href='{% url 'hr-vacation' e.id %}';">Vacation</button>
                     </td>
                 </tr>
             {% endfor %}

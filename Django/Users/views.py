@@ -12,7 +12,7 @@ def createEmployee(request):
                 if form.is_valid():
                         number = form.cleaned_data.get('number') 
                         if len(number) != 11:
-                                messages.error(request, "Please enter a valid phone number")
+                                messages.warning(request, "Please enter a valid phone number")
                                 return render(request, 'Users/addEmployees.html', {'form': form})
                         form.save()
                         messages.success(request, "Employee added successfully")
@@ -28,7 +28,7 @@ def update(request, id):
                 if form.is_valid():
                         number = form.cleaned_data.get('number') 
                         if len(number) != 11:
-                                messages.error(request, "Please enter a valid phone number")
+                                messages.warning(request, "Please enter a valid phone number")
                                 return render(request, 'Users/update.html', {'form': form})
                         form.save()
                         messages.info(request, "Employee updated successfully")
@@ -40,7 +40,7 @@ def update(request, id):
 
 def delete(request, id):
         Employee.objects.get(id=id).delete()
-        messages.info(request, "Employee deleted successfully")
+        messages.error(request, "Employee deleted successfully")
         return redirect('hr-home')
 
 def data(request, id):
@@ -62,13 +62,13 @@ def vacation(request, id):
                         approvedVacation = Employee.objects.filter(id = id).values('approvedVacation')
                         approvedVacation = approvedVacation[0]['approvedVacation']
                         if (availableVacation < numDays):
-                                return render(request, 'Management/vacation.html', {'error': 'Not enough vacation days'})
+                                return render(request, 'Users/vacation', {'error': 'Not enough vacation days'})
                         form.save()
                         
         else:
                 form = EmployeeUpdateForm(instance=Employee.objects.get(id=id))
 
-        return render(request, 'Users/update.html', {'form': form, 'id': id})
+        return render(request, 'Users/vacation.html', {'form': form, 'id': id})
         if (request.method == 'POST'):
                 form_data = request.POST
                 print(form_data)
