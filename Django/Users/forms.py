@@ -44,8 +44,8 @@ class EmployeeUpdateForm(forms.ModelForm):
 
 class EmployeeVacationForm(forms.ModelForm):
     # Auto filled fields
-    id = forms.IntegerField(label= 'id', disabled= True)
-    name = forms.CharField(label = 'name',max_length = 100, disabled= True)
+    employeeID = forms.IntegerField(label= 'id', disabled= True, required= False)
+    empname = forms.CharField(label = 'name',max_length = 100, disabled= True, required= False)
     
     # User input fields
     startDate = forms.DateField(label= 'startDate' ,error_messages = {"required": "Please enter the start date"}, widget = forms.NumberInput(attrs={'type':'date', 'class': 'field'}))
@@ -54,4 +54,4 @@ class EmployeeVacationForm(forms.ModelForm):
     
     class Meta:
         model = Vacation
-        fields = ['employeeID', 'startDate', 'endDate', 'status', 'reason']
+        fields = ['employeeID', 'startDate', 'endDate', 'reason']

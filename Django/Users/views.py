@@ -48,7 +48,8 @@ def data(request, id):
 
 def vacation(request, id):
         if request.method == 'POST':
-                form = EmployeeVacationForm(request.POST, instance=Employee.objects.get(id=id))
+                form = EmployeeVacationForm(request.POST)
+                print(form.errors)
                 if form.is_valid():
                         # Check if the employee has enough vacation days
                         # If they do, then create the vacation request
@@ -57,41 +58,46 @@ def vacation(request, id):
                         endDate = form.cleaned_data.get('endDate')
                         numDaysDelta = endDate - beginDate
                         numDays = numDaysDelta.days
-                        availableVacation = Employee.objects.filter(id = id).values('availableVacation')
-                        availableVacation = availableVacation[0]['availableVacation']
-                        approvedVacation = Employee.objects.filter(id = id).values('approvedVacation')
-                        approvedVacation = approvedVacation[0]['approvedVacation']
+                        availableVacation = Employee.objects.get(id = id).availableVacation
+                        approvedVacation = Employee.objects.get(id = id).approvedVacation
                         if (availableVacation < numDays):
                                 return render(request, 'Management/vacation.html', {'error': 'Not enough vacation days'})
-                        Employee.objects.filter(id = id).update(availableVacation = availableVacation - numDays)
-                        Employee.objects.filter(id = id).update(approvedVacation = approvedVacation + numDays)
+                        employee = Employee.objects.get(id = id)
+                        employee.availableVacation = availableVacation - numDays
+                        employee.approvedVacation = approvedVacation + numDays
+                        employee.save()
+                        # Set the employeeID field to the employee's id
+                        # Set the status field to pending
+
+                        form.instance.employeeID = Employee.objects.get(id = id)
+                        form.instance.status = 'Pending'
+
                         form.save()
+                        messages.success(request, "Vacation request sent successfully")
+                        return redirect('hr-home')
                         
         else:
-                form = EmployeeVacationForm(instance=Employee.objects.get(id=id))
+                # get the employee's name and send it to the form
+                employeeName = Employee.objects.get(id = id).name
+                form = EmployeeVacationForm(initial={'employeeID': id, 'empname': employeeName, 'startDate': datetime.date.today()})
 
-        return render(request, 'Users/vacation.html', {'form': form, 'id': id})
-        if (request.method == 'POST'):
-                form_data = request.POST
-                print(form_data)
-                form_id = form_data['empID']
-                format = '%Y-%m-%d'
-                form_beginDate = datetime.datetime.strptime(form_data['beginDate'], format) 
-                form_endDate = datetime.datetime.strptime(form_data['endDate'], format)
-                #the number of days between the start and end date
-                numDaysDelta = form_endDate - form_beginDate
-                numDays = numDaysDelta.days
-                form_reason = form_data['reason']
-                # get the employee's available vacation days
-                # if the employee has enough days, then create the vacation request
-                # else, return an error message
-                
-                Employee.objects.filter(id = form_id).update(availableVacation = availableVacation - numDays)
-                Employee.objects.filter(id = form_id).update(approvedVacation = approvedVacation + numDays)
-                VacEmployee = Employee.objects.get(id = form_id)
-                Vacation.objects.create(employeeID = VacEmployee, startDate = form_beginDate, endDate = form_endDate, status = 'Pending', reason = form_reason)
-                return redirect('hr-vacationList')
-        return render(request, 'Users/vacation.html')
-
+        return render(request, 'Users/vacation.html', {'form': form})
+        
+def deleteVacation(request, id):
+        Vacation.objects.get(id=id).delete()
+        messages.info(request, "Vacation request deleted successfully")
+        return redirect('hr-vacationList')
+def approveVacation(request, id):
+        vacation = Vacation.objects.get(id=id)
+        vacation.status = 'Approved'
+        vacation.save()
+        messages.success(request, "Vacation request approved successfully")
+        return redirect('hr-vacationList')
+def denyVacation(request, id):
+        vacation = Vacation.objects.get(id=id)
+        vacation.status = 'Rejected'
+        vacation.save()
+        messages.success(request, "Vacation request rejected successfully")
+        return redirect('hr-vacationList')
 def vacationList(request):
-        return render(request, 'Management/vacationList.html')
+        return render(request, 'Users/vacationList.html')

@@ -12,4 +12,7 @@ urlpatterns = [
     path('deleteUser/<id>/', userViews.delete, name='hr-deleteData'),
     path('vacations/<id>/', userViews.vacation, name='hr-vacation'),
     path('vacationList/', userViews.vacationList, name='hr-vacationList'),
+    path('deleteVacation/<id>/', userViews.deleteVacation, name='hr-deleteVacation'),
+    path('approveVacation/<id>/', userViews.approveVacation, name='hr-approveVacation'),
+    path('denyVacation/<id>/', userViews.denyVacation, name='hr-denyVacation'),
 ]

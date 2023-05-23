@@ -51,8 +51,8 @@ label{
   /*change resize anchor to be top*/
 
 }
-.field, input[name=name], input[name=id]{
-  width: 30%;
+.field, input[name=employeeID], input[name=empname]{
+  width: 55%;
   margin: 20px;
   padding: 10px;
   padding-top: 5px;
@@ -90,4 +90,21 @@ div h1 {
   background-color: #f66b0e;
   padding: 20px;
   border-radius: 10px;
+}
+.flex_col{
+  flex-direction: column;
+  width: 100%;
+}
+.flex_row{
+  flex-direction: row;
+  width: 100%;
+}
+.errorlist{
+  color: red;
+  position: relative;
+  top: -20px;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 15px;
+  margin-top: 10px;
 }

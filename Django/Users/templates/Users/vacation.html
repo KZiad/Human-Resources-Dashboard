@@ -1,55 +1,71 @@
-{% extends 'Management/base.html' %}
-{% load static %}
-
-{% block styles %}
+{% extends 'Management/base.html' %} {% load static %} {% block styles %}
 
 <link rel="stylesheet" href="{% static 'Users/CSS/Vacation.css' %}" />
 <title>Vacation Application Form</title>
 
-{% endblock styles %}
-
-{% block content %}
+{% endblock styles %} {% block content %}
 <div>
   <h1>Apply for Vacation</h1>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li class="{{ message.tags }}">{{ message|safe }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
   <form class="vform" method="post">
-      {% csrf_token %}
-      <div class="vform-top">
-        <label for="empID">ID</label>
-        {{form.id}}
-        
-        <label for="empName">Full Name</label>
-        {{form.name}}
-        <script>prefillForm()</script>
-      </div>
+    {% csrf_token %}
+    <div class="vform-top">
       
-      <div class="vform-mid">
-        <div class="form-half date">
-          <label>Starting Date</label>
-          {{form.startDate}}
+      <div class="flex_col">
+        <div class"flex_row">
           
-          <label>Ending Date</label>
-          {{form.endDate}}
+          <label for="employeeID">ID</label>
+          {{form.employeeID}}
         </div>
-        
-        <div class="form-half reason">
-          <label>Reason</label>
-          {{form.reason}}
-          </div>
-        </div>
-        
-        <div class="input-part">
-        <input
-        type="submit"
-        class="abutton"
-        value="Submit Request"
-        />
-        <input
-          type="button"
-          class="abutton"
-          value="Cancel"
-          onclick="window.location.href = '{% url 'hr-home' %}'"
-          />
+        {{form.employeeID.errors}}
       </div>
-    </form>
+
+      
+      <div class="flex_col">
+        <div class"flex_row">
+          <label for="empname">Full Name</label>
+          {{form.empname}}
+        </div>
+        {{form.empname.errors}}
+      </div>
+      <script>
+        prefillForm();
+      </script>
+    </div>
+
+    <div class="vform-mid">
+      <div class="form-half date">
+        <label>Starting Date</label>
+        {{form.startDate}}
+        {{form.startDate.errors}}
+
+        <label>Ending Date</label>
+        {{form.endDate}}
+        {{form.endDate.errors}}
+      </div>
+
+      <div class="form-half reason">
+        <label>Reason</label>
+        {{form.reason}}
+        {{form.reason.errors}}
+      </div>
+    </div>
+
+    <div class="input-part">
+      <input type="submit" class="abutton" value="Submit Request" />
+      <input
+        type="button"
+        class="abutton"
+        value="Cancel"
+        onclick="window.location.href = '{% url 'hr-home' %}'"
+      />
+    </div>
+  </form>
 </div>
 {% endblock content %}
