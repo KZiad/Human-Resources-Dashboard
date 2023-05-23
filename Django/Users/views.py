@@ -62,41 +62,43 @@ def vacation(request, id):
                         approvedVacation = Employee.objects.filter(id = id).values('approvedVacation')
                         approvedVacation = approvedVacation[0]['approvedVacation']
                         if (availableVacation < numDays):
-                                return render(request, 'Users/vacation', {'error': 'Not enough vacation days'})
+                                messages.error(request, "Not enough vacation days")
+                                return render(request, 'Users/vacation', {'form': form})
                         form.save()
                         
         else:
                 form = EmployeeUpdateForm(instance=Employee.objects.get(id=id))
 
-        return render(request, 'Users/vacation.html', {'form': form, 'id': id})
-        if (request.method == 'POST'):
-                form_data = request.POST
-                print(form_data)
-                form_id = form_data['empID']
-                format = '%Y-%m-%d'
-                form_beginDate = datetime.datetime.strptime(form_data['beginDate'], format) 
-                form_endDate = datetime.datetime.strptime(form_data['endDate'], format)
-                #the number of days between the start and end date
-                numDaysDelta = form_endDate - form_beginDate
-                numDays = numDaysDelta.days
-                form_reason = form_data['reason']
-                # get the employee's available vacation days
-                # if the employee has enough days, then create the vacation request
-                # else, return an error message
+        return render(request, 'Users/vacation.html', {'form': form})
+        
+        # if (request.method == 'POST'):
+        #         form_data = request.POST
+        #         print(form_data)
+        #         form_id = form_data['empID']
+        #         format = '%Y-%m-%d'
+        #         form_beginDate = datetime.datetime.strptime(form_data['beginDate'], format) 
+        #         form_endDate = datetime.datetime.strptime(form_data['endDate'], format)
+        #         #the number of days between the start and end date
+        #         numDaysDelta = form_endDate - form_beginDate
+        #         numDays = numDaysDelta.days
+        #         form_reason = form_data['reason']
+        #         # get the employee's available vacation days
+        #         # if the employee has enough days, then create the vacation request
+        #         # else, return an error message
                 
-                availableVacation = Employee.objects.filter(id = form_id).values('availableVacation')
-                print(availableVacation)
-                availableVacation = availableVacation[0]['availableVacation']
-                approvedVacation = Employee.objects.filter(id = form_id).values('approvedVacation')
-                approvedVacation = approvedVacation[0]['approvedVacation']
-                if (availableVacation < numDays):
-                        return render(request, 'Management/vacation.html', {'error': 'Not enough vacation days'})
-                Employee.objects.filter(id = form_id).update(availableVacation = availableVacation - numDays)
-                Employee.objects.filter(id = form_id).update(approvedVacation = approvedVacation + numDays)
-                VacEmployee = Employee.objects.get(id = form_id)
-                Vacation.objects.create(employeeID = VacEmployee, startDate = form_beginDate, endDate = form_endDate, status = 'Pending', reason = form_reason)
-                return redirect('hr-vacationList')
-        return render(request, 'Users/vacation.html')
+        #         availableVacation = Employee.objects.filter(id = form_id).values('availableVacation')
+        #         print(availableVacation)
+        #         availableVacation = availableVacation[0]['availableVacation']
+        #         approvedVacation = Employee.objects.filter(id = form_id).values('approvedVacation')
+        #         approvedVacation = approvedVacation[0]['approvedVacation']
+        #         if (availableVacation < numDays):
+        #                 return render(request, 'Management/vacation.html', {'error': 'Not enough vacation days'})
+        #         Employee.objects.filter(id = form_id).update(availableVacation = availableVacation - numDays)
+        #         Employee.objects.filter(id = form_id).update(approvedVacation = approvedVacation + numDays)
+        #         VacEmployee = Employee.objects.get(id = form_id)
+        #         Vacation.objects.create(employeeID = VacEmployee, startDate = form_beginDate, endDate = form_endDate, status = 'Pending', reason = form_reason)
+        #         return redirect('hr-vacationList')
+        # return render(request, 'Users/vacation.html')
 
 def vacationList(request):
         return render(request, 'Users/vacationList.html')

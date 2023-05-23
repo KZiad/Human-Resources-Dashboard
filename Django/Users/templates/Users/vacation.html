@@ -4,52 +4,55 @@
 {% block styles %}
 
 <link rel="stylesheet" href="{% static 'Users/CSS/Vacation.css' %}" />
+<link rel="stylesheet" href="{% static 'Management/CSS/Message.css' %}">
 <title>Vacation Application Form</title>
 
 {% endblock styles %}
 
 {% block content %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">
+                {{ message|safe }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
 <div>
-  <h1>Apply for Vacation</h1>
-  <form class="vform" method="post">
-      {% csrf_token %}
-      <div class="vform-top">
-        <label for="empID">ID</label>
-        {{form.id}}
-        
-        <label for="empName">Full Name</label>
-        {{form.name}}
-        <script>prefillForm()</script>
-      </div>
-      
-      <div class="vform-mid">
-        <div class="form-half date">
-          <label>Starting Date</label>
-          {{form.startDate}}
-          
-          <label>Ending Date</label>
-          {{form.endDate}}
-        </div>
-        
-        <div class="form-half reason">
-          <label>Reason</label>
-          {{form.reason}}
-          </div>
-        </div>
-        
-        <div class="input-part">
-        <input
-        type="submit"
-        class="abutton"
-        value="Submit Request"
-        />
-        <input
-          type="button"
-          class="abutton"
-          value="Cancel"
-          onclick="window.location.href = '{% url 'hr-home' %}'"
-          />
-      </div>
+	<h1>Apply for Vacation</h1>
+	<form class="vform" method="post">
+		{% csrf_token %}
+			<div class="vform-top">
+				<label for="empID">ID</label>
+				{{form.id}}
+				
+				<label for="empName">Full Name</label>
+				{{form.name}}
+			</div>
+			
+			<div class="vform-mid">
+				<div class="form-half date">
+					<label>Starting Date</label>
+					{{form.beginDate}}
+					
+					<label>Ending Date</label>
+					{{form.endDate}}
+				</div>
+				
+				<div class="form-half reason">
+					<label>Reason</label>
+					{{form.reason}}
+				</div>
+			</div>
+			
+			<div class="input-part">
+			<input type="submit" class="abutton" value="Submit Request"/>
+			<input type="button" class="abutton" value="Cancel" onclick="window.location.href = '{% url 'hr-home' %}'"/>
+			</div>
+		</div>
     </form>
 </div>
 {% endblock content %}
