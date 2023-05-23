@@ -77,7 +77,7 @@ label{
   cursor: pointer;
 }
 
-div h1 {
+div h1, div h3 {
   width: fit-content;
   margin: auto;
   margin-top: 20px;
