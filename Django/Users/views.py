@@ -12,7 +12,7 @@ def createEmployee(request):
                 if form.is_valid():
                         number = form.cleaned_data.get('number') 
                         if len(number) != 11:
-                                messages.error(request, "Please enter a valid phone number")
+                                messages.warning(request, "Please enter a valid phone number")
                                 return render(request, 'Users/addEmployees.html', {'form': form})
                         form.save()
                         messages.success(request, "Employee added successfully")
@@ -28,7 +28,7 @@ def update(request, id):
                 if form.is_valid():
                         number = form.cleaned_data.get('number') 
                         if len(number) != 11:
-                                messages.error(request, "Please enter a valid phone number")
+                                messages.warning(request, "Please enter a valid phone number")
                                 return render(request, 'Users/update.html', {'form': form})
                         form.save()
                         messages.info(request, "Employee updated successfully")
@@ -40,7 +40,7 @@ def update(request, id):
 
 def delete(request, id):
         Employee.objects.get(id=id).delete()
-        messages.info(request, "Employee deleted successfully")
+        messages.error(request, "Employee deleted successfully")
         return redirect('hr-home')
 
 def data(request, id):
@@ -100,4 +100,5 @@ def denyVacation(request, id):
         messages.success(request, "Vacation request rejected successfully")
         return redirect('hr-vacationList')
 def vacationList(request):
+        return render(request, 'Users/vacationList.html')
         return render(request, 'Users/vacationList.html')
