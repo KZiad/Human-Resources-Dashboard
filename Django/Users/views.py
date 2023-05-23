@@ -61,7 +61,8 @@ def vacation(request, id):
                         availableVacation = Employee.objects.get(id = id).availableVacation
                         approvedVacation = Employee.objects.get(id = id).approvedVacation
                         if (availableVacation < numDays):
-                                return render(request, 'Management/vacation.html', {'error': 'Not enough vacation days'})
+                                messages.error(request, "Not enough vacation days")
+                                return render(request, 'Management/vacation.html')
                         employee = Employee.objects.get(id = id)
                         employee.availableVacation = availableVacation - numDays
                         employee.approvedVacation = approvedVacation + numDays
