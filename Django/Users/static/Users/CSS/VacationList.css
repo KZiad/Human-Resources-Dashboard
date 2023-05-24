@@ -16,7 +16,7 @@ h1, h3 {
     color: #ffffff;
     background-color: #30324284;
     width: fit-content;
-    max-width: 80%;
+    max-width: 1260px;
     margin: auto;
     font-size: 1em;
     border-radius: 10px;
@@ -49,10 +49,10 @@ h1, h3 {
     margin: auto;
     padding-left: 10px;
 }
-.approved{
+.Approved{
     background-color: rgba(79, 222, 114, 0.7);
 }
-.denied{
+.Rejected{
     background-color: rgb(221, 50, 50);
 }
 .empData{

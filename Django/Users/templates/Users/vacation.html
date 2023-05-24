@@ -16,6 +16,11 @@
   {% endif %}
   <form class="vform" method="post">
     {% csrf_token %}
+
+    <div class="flex_row avDaysDiv">  
+      <p>Available Vacation Days: </p><p class="availabledays">{{availableDays}}</p>
+    </div>
+
     <div class="vform-top">
       
       <div class="flex_col">

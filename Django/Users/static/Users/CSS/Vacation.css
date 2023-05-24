@@ -92,10 +92,12 @@ div h1, div h3 {
   border-radius: 10px;
 }
 .flex_col{
+  display: flex;
   flex-direction: column;
   width: 100%;
 }
 .flex_row{
+  display: flex;
   flex-direction: row;
   width: 100%;
 }
@@ -107,4 +109,18 @@ div h1, div h3 {
   margin: 0px;
   margin-left: 15px;
   margin-top: 10px;
+}
+
+.avDaysDiv{
+  margin: auto;
+  width: fit-content;
+}
+.availabledays{
+  background-color: #f66b0e;
+  color: #ffffff;
+  width: fit-content;
+  margin: auto;
+  margin-left: 10px;
+  padding: 0px 10px;
+  border-radius: 20px;
 }

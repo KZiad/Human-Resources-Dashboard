@@ -1,5 +1,3 @@
-HR/__pycache__
-Management/__pycache__
-Management/migrations/__pycache__
-Users/__pycache__
-Users/migrations/__pycache__
+**/__pycache__
+.vscode
+.idea

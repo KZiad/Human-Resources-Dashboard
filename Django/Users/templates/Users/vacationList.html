@@ -8,47 +8,48 @@
 
 <h1>All Vacations</h1>
 
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li class="{{ message.tags }}">{{ message|safe }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
 <div class="vacs">
-  {% if !data %}
-  <h1>No vacations to show</h1>
-  {% else %}
-  <table>
-    <tr>
-      <th>Employee</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-    </tr>
-  </table>
-  {% for vac in data %}
+  {% load vacs_tags %}
+  
+  {% for vac in vacs %}
+  {% calc_vac_days vac as days %}
   <div class="vac">
-    <div class="{%vac.%}">
+    <div class="cardHead {{vac.status}}">
       <div class="empData">
-        {%vac.employeeID%} <br />
-        {%employees.get()%}
+        {{vac.employeeID.id}} <br />
+        {{vac.employeeID.name}}
       </div>
-      <div class="vacStatus">Status: ${vacs[k].status}</div>
+      <div class="vacStatus">Status: {{vac.status}}</div>
     </div>
     <div class="cardBody">
       <div class="vacDates">
-        ${beginDate.getDate()}/${beginDate.getMonth() +
-        1}/${beginDate.getFullYear()} ->
-        ${endDate.getDate()}/${endDate.getMonth() + 1}/${endDate.getFullYear()}
-        <br />{% vac.days %} days
+        {{vac.startDate}} -> {{vac.endDate}}
+        <br />{{ days }} days
       </div>
       <div class="vacReason">
         Reason: <br />
-        {% vac.reason %}
+        {{ vac.reason }}
       </div>
       <div class="vacActions">
         {% if vac.status == "Pending" %}
-          <button class="appBut" onclick="window.location.href = '/approveVacation/{% vac.id %}'">Approve</button>
-          <button class="denBut" onclick="window.location.href = '/denyVacation/{% vac.id %}'">Deny</button>
+          <button class="appBut" onclick="window.location.href = '/approveVacation/{{ vac.id }}'">Approve</button>
+          <button class="denBut" onclick="window.location.href = '/denyVacation/{{vac.id }}'">Deny</button>
         {% endif %}
-          <button class="deleteBut" onclick="window.location.href = '/deleteVacation/{% vac.id %}'">Delete</button>
+          <button class="deleteBut" onclick="window.location.href = '/deleteVacation/{{vac.id}}'">Delete</button>
       </div>
     </div>
   </div>
-  {% endfor %} {% endif %}
+  {% empty %}
+  <h1>No vacations to show</h1>
+  {% endfor %}
 </div>
 
 {% endblock content %}

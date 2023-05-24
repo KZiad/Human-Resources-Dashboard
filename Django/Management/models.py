@@ -32,4 +32,8 @@ class Vacation(models.Model):
     def __str__(self):
         # Format example: (Vac. 1) Emp 1 | 2020-01-01 -> 2020-01-02 | Pending
         return f'(Vac. {self.id}) Emp. {self.employeeID} | {self.startDate} -> {self.endDate} | {self.status}'
+    
+    def calculateDays(self):
+        delta = self.endDate - self.startDate
+        return delta.days
         
