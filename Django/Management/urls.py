@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from Users import views as userViews
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('', views.projects, name='hr-projects'),
@@ -15,4 +16,6 @@ urlpatterns = [
     path('deleteVacation/<id>/', userViews.deleteVacation, name='hr-deleteVacation'),
     path('approveVacation/<id>/', userViews.approveVacation, name='hr-approveVacation'),
     path('denyVacation/<id>/', userViews.denyVacation, name='hr-denyVacation'),
+    
+    path('search-employees', csrf_exempt(views.searchEmp), name='searchEmp')
 ]
