@@ -16,6 +16,5 @@ urlpatterns = [
     path('deleteVacation/<id>/', userViews.deleteVacation, name='hr-deleteVacation'),
     path('approveVacation/<id>/', userViews.approveVacation, name='hr-approveVacation'),
     path('denyVacation/<id>/', userViews.denyVacation, name='hr-denyVacation'),
-    
     path('search-employees', csrf_exempt(views.searchEmp), name='searchEmp')
 ]

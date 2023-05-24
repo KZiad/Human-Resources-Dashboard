@@ -43,16 +43,14 @@
             </thead>
             <tbody>
                 {% for e in emp %}
-                        
-                        <tr>
-                            <td><button type="button" class="emp-btn" onclick="window.location.href='{% url 'hr-data' e.id %}';">{{e.name}}</button></td>
-                            <td>
-                                <button class="update-employee-btn" type="button" onclick="window.location.href='{% url 'hr-updateData' e.id %}';">Update</button>
-                                <button class="vacation-employee-btn" type="button" onclick="window.location.href='{% url 'hr-vacation' e.id %}';">Vacation</button>
-                            </td>
-                        </tr>
-                        
-                    {% endfor %}
+                    <tr>
+                        <td><button type="button" class="emp-btn" onclick="window.location.href='{% url 'hr-data' e.id %}';">{{e.name}}</button></td>
+                        <td>
+                            <button class="update-employee-btn" type="button" onclick="window.location.href='{% url 'hr-updateData' e.id %}';">Update</button>
+                            <button class="vacation-employee-btn" type="button" onclick="window.location.href='{% url 'hr-vacation' e.id %}';">Vacation</button>
+                        </td>
+                    </tr>    
+                {% endfor %}
             </tbody>
         </table>
     </div>

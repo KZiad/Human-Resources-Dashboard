@@ -28,10 +28,10 @@ searchInp.addEventListener('keyup', (e) => {
                 data.forEach(e => {
                     tBody.innerHTML += `
                     <tr>
-                        <td><button type="button" class="emp-btn" onclick="window.location.href='{% url 'hr-data' ${e.id} %}';">${e.name}</button></td>
+                        <td><button type="button" class="emp-btn" onclick="window.location.href='/data/${e.id}';">${e.name}</button></td>
                         <td>
-                            <button class="update-employee-btn" type="button" onclick="window.location.href='{% url 'hr-updateData' e.id %}';">Update</button>
-                            <button class="vacation-employee-btn" type="button" onclick="window.location.href='{% url 'hr-vacation' e.id %}';">Vacation</button>
+                            <button class="update-employee-btn" type="button" onclick="window.location.href='/updateData/${e.id}';">Update</button>
+                            <button class="vacation-employee-btn" type="button" onclick="window.location.href='/vacation/${e.id}';">Vacation</button>
                         </td>
                     </tr>
                     `
