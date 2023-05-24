@@ -22,8 +22,8 @@ searchInp.addEventListener('keyup', (e) => {
             appTable.style.display = 'none'
             tableOutput.style.display = 'block'
 
-            if (data.length == 0) {
-                tableOutput.innerHTML = ''
+            if (data.length === 0) {
+                tableOutput.style.display = 'none'
             } else {
                 data.forEach(e => {
                     tBody.innerHTML += `
