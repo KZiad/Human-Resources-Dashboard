@@ -24,7 +24,6 @@
 {% endif %}
 
 
-
 <form>
     <div class="search">
         <input type='text' placeholder='Search...' id='search-input'>
@@ -34,26 +33,46 @@
     <button id="add-employee-btn" type="button" onclick="window.location.href='{% url 'hr-addEmployee' %}';">Add Employee</button>
     <br><br>
     
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody class="search-insert">
-
-            {% for e in emp %}
+    <div class='app-table'>
+        <table>
+            <thead>
                 <tr>
-                    <td><button type="button" class="emp-btn" onclick="window.location.href='{% url 'hr-data' e.id %}';">{{e.name}}</button></td>
-                    <td>
-                        <button class="update-employee-btn" type="button" onclick="window.location.href='{% url 'hr-updateData' e.id %}';">Update</button>
-                        <button class="vacation-employee-btn" type="button" onclick="window.location.href='{% url 'hr-vacation' e.id %}';">Vacation</button>
-                    </td>
+                    <th>Name</th>
+                    <th>Actions</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for e in emp %}
+                        
+                        <tr>
+                            <td><button type="button" class="emp-btn" onclick="window.location.href='{% url 'hr-data' e.id %}';">{{e.name}}</button></td>
+                            <td>
+                                <button class="update-employee-btn" type="button" onclick="window.location.href='{% url 'hr-updateData' e.id %}';">Update</button>
+                                <button class="vacation-employee-btn" type="button" onclick="window.location.href='{% url 'hr-vacation' e.id %}';">Vacation</button>
+                            </td>
+                        </tr>
+                        
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class='table-output'>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class='table-body'>
+                
+            </tbody>
+        </table>
+    </div>
+
 </form>
+
+<script src="{% static 'Management/JS/search.js' %}">
+</script>
 
 {% endblock content %}
