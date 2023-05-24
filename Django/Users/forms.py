@@ -50,7 +50,7 @@ class EmployeeVacationForm(forms.ModelForm):
     # User input fields
     startDate = forms.DateField(label= 'startDate' ,error_messages = {"required": "Please enter the start date"}, widget = forms.NumberInput(attrs={'type':'date', 'class': 'field'}))
     endDate = forms.DateField(label= 'endDate' ,error_messages = {"required": "Please enter the end date"}, widget = forms.NumberInput(attrs={'type':'date', 'class': 'field'}))
-    reason = forms.CharField(label= 'reason', max_length = 1000, error_messages = {"required": "Please enter the reason"}, widget=forms.Textarea(attrs={'placeholder': 'Reason', 'rows': 4, 'cols': 30, 'class': 'field'}))
+    reason = forms.CharField(label= 'reason', max_length = 1000, error_messages = {"required": "Please enter the reason"}, widget=forms.Textarea(attrs={'rows': 4, 'cols': 30, 'class': 'field'}))
     
     class Meta:
         model = Vacation
