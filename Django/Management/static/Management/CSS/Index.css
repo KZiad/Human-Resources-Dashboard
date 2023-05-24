@@ -91,18 +91,21 @@ table {
     width: 900px;
     margin-bottom: 20px;
 }
+
 table th {
     border-collapse: collapse;
     border: none;
-    background-color: #f66b0e;
+    background-color: #082032;
     padding: 10px;
 }
+
 table td {
     text-align: center;
-    border: 1px solid #f66b0e;
-    background-color: #ffffff;
+    border: 2px solid #334756;
+    background-color: #2C394B;
     padding: 10px;
 }
+
 table button {
     width: fit-content;
     padding: 12px;
@@ -110,15 +113,38 @@ table button {
     border-radius: 10px;
     font-size: 1em;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f66b0e;
     color: #ffffff;
     border: none;
     cursor: pointer;
 }
 
-table button:hover{
-    background-color: #bd5612;
-    transition: .5s;
+.emp-btn {
+    background-color: rgba(150, 141, 132, 0.5);
+}
+
+.emp-btn:hover {
+    background-color: rgba(105, 100, 95, 0.5);
+    transition: 0.5s;
+}
+
+.update-employee-btn {
+    background-color: #2f8f65;
+    color: #ffffff;
+}
+
+.update-employee-btn:hover {
+    background-color: #21573f;
+    transition: 0.5s;
+}
+
+.vacation-employee-btn{
+    background-color: #0C7B93;
+    color: #ffffff;
+}
+
+.vacation-employee-btn:hover{
+    background-color: #0b5464;
+    transition: 0.5s;
 }
 
 tr:first-child th:first-child { border-top-left-radius: 6px; }
