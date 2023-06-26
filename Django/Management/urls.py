@@ -4,8 +4,7 @@ from Users import views as userViews
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-    path('', views.projects, name='hr-projects'),
-    path('home/', views.home, name='hr-home'),
+    path('', views.home, name='hr-home'),
     path('about/', views.about, name='hr-about'),
     path('data/<id>/', userViews.data, name='hr-data'),
     path('addEmployee/', userViews.createEmployee , name='hr-addEmployee'),
