@@ -102,7 +102,7 @@ table th {
 table td {
     text-align: center;
     border: 2px solid #484848;
-    background-color: #d3e3f8;
+    background-color: #f9e8d1;
     /* background-color: rgba(105, 100, 95, 0.5); ccd5e1 */
 
     padding: 10px;
@@ -121,7 +121,7 @@ table button {
 }
 
 .emp-btn {
-    background-color: #303242;
+    background-color: #52566e;
     color: #ffffff;
 }
 
