@@ -5,7 +5,7 @@ This website was a collaborative project by a team of FCAI students as part of t
 <b><u>Team</u></b>
 <ul>
   <li>
-    <a href = "https://www.linkedin.com/in/mohamed-elashmawy-103b5223b/">Mohamed Waleed</a> (Leader)
+    <a href = "https://www.linkedin.com/in/mohamed-elashmawy-103b5223b/">Mohamed Elashmawy</a> (Leader)
   </li>
   <li>
     <a href = "https://www.linkedin.com/in/zkarsoun/">Ziad Karson</a>
