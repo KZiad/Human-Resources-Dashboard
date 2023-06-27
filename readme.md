@@ -1,7 +1,31 @@
 <h1>Project 1 (Human Resources Website):</h1>
 
-<h2>Phase 1 requirements</h2>
-<h3>Required minimum functionalities:</h3>
+<h2>Intro</h2>
+This website was a collaborative project by a team of FCAI students as part of their Web Dev. Project (2023), it spanned an entire term from Feburary till May. </br></br>
+<b><u>Team</u></b>
+<ul>
+  <li>
+    <a href = "https://www.linkedin.com/in/mohamed-elashmawy-103b5223b/">Mohamed Elashmawy</a> (Leader)
+  </li>
+  <li>
+    <a href = "https://www.linkedin.com/in/zkarsoun/">Ziad Karson</a>
+  </li>
+  <li>
+    <a href = "https://github.com/marwan-ahmedd">Marwan Ahmed</a>
+  </li>
+  <li>
+     <a href = "https://github.com/abdulrahman1238">Abdelrahman Hassan</a>
+  </li>
+  <li>
+     <a href = "https://github.com/AhmedAbdelhamid19">Ahmed Abd El-Hamid</a>
+  </li>
+</ul>
+
+<h2>The Website</h1>
+You can access the website through <a href = "https://dark2343.pythonanywhere.com"> FCAI-Insiders </a> 
+
+<h2>Requirements</h2>
+<h3>Phase 1 requirements</h3>
 <ol>
 <li> 
   User can add a new employee to the system. Employee data should include id,
@@ -45,7 +69,7 @@ a home page.
 </li>
   </ol>
 
-<h2>Phase 2 requirements</h2>
+<h3>Phase 2 requirements</h3>
 <ol>
   <li>
 Add a new homepage for your website with the four names of the recommended projects( Human Resources, Students Affairs, Higher Studies and Laboratory Tracking). On clicking on the name of your chosen project, the page should load your website else nothing happens. This homepage will be common across all projects so try to design it in a good way.
@@ -59,7 +83,7 @@ Add CSS in external file(s).
   </li>
 </ol>
 
-<h2>Phase 3 requirements</h2>
+<h3>Phase 3 requirements</h3>
 <ol>
   <li>
       You are required to complete the functionalities of your website using Django framework.
@@ -71,10 +95,4 @@ Add CSS in external file(s).
       Add all AJAX code to connect both frontend and backend to work together
   </li>
 </ol>
-
-<h2> Phase 3 Requirements </h2>
-<ol>
-  <li> Ajax + Django</li>
-  </ol>
-  
   
