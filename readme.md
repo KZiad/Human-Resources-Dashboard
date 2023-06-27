@@ -21,7 +21,7 @@ This website was a collaborative project by a team of FCAI students as part of t
   </li>
 </ul>
 
-<h2>Accessing The Website</h1>
+<h2>The Website</h1>
 You can access the website through <a href = "https://dark2343.pythonanywhere.com"> FCAI-Insiders </a> 
 
 <h2>Requirements</h2>
