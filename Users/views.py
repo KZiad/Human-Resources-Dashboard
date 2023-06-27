@@ -10,10 +10,27 @@ def createEmployee(request):
         if request.method == 'POST':
                 form = EmployeeRegistrationForm(request.POST)
                 if form.is_valid():
+                        dob = form.cleaned_data.get('dob')
+                        difference = datetime.date.today() - dob
+                        if(difference.days <= 6574.5):
+                                messages.warning(request, "Must be at least 18 years old")
+                                return render(request, 'Users/addEmployees.html', {'form': form})
+
                         number = form.cleaned_data.get('number') 
                         if len(number) != 11:
-                                messages.warning(request, "Please enter a valid phone number")
+                                messages.warning(request, "Invalid mobile number")
                                 return render(request, 'Users/addEmployees.html', {'form': form})
+                        
+                        vacation = form.cleaned_data.get('availableVacation')
+                        if vacation >= 31:
+                                messages.warning(request, "Max vacation is 31 days")
+                                return render(request, 'Users/addEmployees.html', {'form': form})
+
+                        salary = form.cleaned_data.get('salary')
+                        if salary >= 5000_000:
+                                messages.warning(request, "Max salary is 500K")
+                                return render(request, 'Users/addEmployees.html', {'form': form})
+                        
                         form.save()
                         messages.success(request, "Employee added successfully")
                         return redirect('hr-home')
@@ -26,10 +43,27 @@ def update(request, id):
         if request.method == 'POST':
                 form = EmployeeUpdateForm(request.POST, instance=Employee.objects.get(id=id))
                 if form.is_valid():
+                        dob = form.cleaned_data.get('dob')
+                        difference = datetime.date.today() - dob
+                        if(difference.days <= 6574.5):
+                                messages.warning(request, "Must be at least 18 years old")
+                                return render(request, 'Users/addEmployees.html', {'form': form})
+
                         number = form.cleaned_data.get('number') 
                         if len(number) != 11:
-                                messages.warning(request, "Please enter a valid phone number")
-                                return render(request, 'Users/update.html', {'form': form})
+                                messages.warning(request, "Invalid mobile number")
+                                return render(request, 'Users/addEmployees.html', {'form': form})
+                        
+                        vacation = form.cleaned_data.get('availableVacation')
+                        if vacation >= 31:
+                                messages.warning(request, "Max vacation is 31 days")
+                                return render(request, 'Users/addEmployees.html', {'form': form})
+
+                        salary = form.cleaned_data.get('salary')
+                        if salary >= 5000_000:
+                                messages.warning(request, "Max salary is 500K")
+                                return render(request, 'Users/addEmployees.html', {'form': form})
+                        
                         form.save()
                         messages.info(request, "Employee updated successfully")
                         return redirect('hr-home')
