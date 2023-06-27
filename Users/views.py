@@ -12,7 +12,7 @@ def createEmployee(request):
                 if form.is_valid():
                         dob = form.cleaned_data.get('dob')
                         difference = datetime.date.today() - dob
-                        if(difference.days <= 6574.5):
+                        if(difference.days < 6574.5):
                                 messages.warning(request, "Must be at least 18 years old")
                                 return render(request, 'Users/addEmployees.html', {'form': form})
 
@@ -22,12 +22,12 @@ def createEmployee(request):
                                 return render(request, 'Users/addEmployees.html', {'form': form})
                         
                         vacation = form.cleaned_data.get('availableVacation')
-                        if vacation >= 31:
+                        if vacation > 31:
                                 messages.warning(request, "Max vacation is 31 days")
                                 return render(request, 'Users/addEmployees.html', {'form': form})
 
                         salary = form.cleaned_data.get('salary')
-                        if salary >= 5000_000:
+                        if salary > 5000_000:
                                 messages.warning(request, "Max salary is 500K")
                                 return render(request, 'Users/addEmployees.html', {'form': form})
                         
