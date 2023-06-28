@@ -11,7 +11,7 @@ This website was a collaborative project by a team of FCAI students as part of t
     <a href = "https://www.linkedin.com/in/zkarsoun/">Ziad Karson</a>
   </li>
   <li>
-    <a href = "https://github.com/marwan-ahmedd">Marwan Ahmed</a>
+    <a href = "https://www.linkedin.com/in/marwan-ahmed-b37b45245/">Marwan Ahmed</a>
   </li>
   <li>
      <a href = "https://github.com/abdulrahman1238">Abdelrahman Hassan</a>
